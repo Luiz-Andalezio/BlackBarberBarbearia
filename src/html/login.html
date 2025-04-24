@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Black Barber</title>
+  <link rel="stylesheet" href="../css/login.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="rye-regular">Black Barber</h1>
+    <form id="loginForm">
+      <label for="action">Escolha uma opção:</label>
+      <select id="action" required>
+        <option value="login" selected>Entrar</option>
+        <option value="register">Cadastro Cliente</option>
+      </select>
+
+      <!-- Login -->
+      <div id="loginFields">
+        <br><hr>
+        <label for="role">Entrar como:</label>
+        <br>
+        <select id="role" required>
+          <option value="cliente" selected>Cliente</option>
+          <option value="barbeiro">Barbeiro</option>
+        </select>
+        <br><br>
+        <label for="email">Email:</label>
+        <br>
+        <input type="email" id="email" placeholder="Digite seu email..." required>
+
+        <br><br>
+        <label for="senha">Senha:</label>
+        <br>
+        <input type="password" id="senha" placeholder="Digite sua senha..." required>
+
+        <br><br>
+        <button type="submit">Confirmar</button>
+      </div>
+
+      <!-- Cadastro -->
+      <div id="registerFields" style="display: none;">
+        <br><hr>
+        <label for="nome">Nome:</label>
+        <br>
+        <input type="text" id="nome" placeholder="Digite seu nome..." required>
+
+        <br><br>
+        <label for="telefone">Telefone:</label>
+        <br>
+        <input type="tel" id="telefone" placeholder="Digite seu telefone... (opcional)">
+
+        <br><br>
+        <label for="emailRegister">E-mail:</label>
+        <br>
+        <input type="email" id="emailRegister" placeholder="Digite seu e-mail..." required>
+
+        <br><br>
+        <label for="senhaRegister">Senha:</label>
+        <br>
+        <input type="password" id="senhaRegister" placeholder="Digite sua senha..." required>
+
+        <br><br>
+        <label for="confirmarSenha">Confirmar senha:</label>
+        <br>
+        <input type="password" id="confirmarSenha" placeholder="Confirme sua senha..." required>
+
+        <br><br>
+        <button type="submit">Confirmar</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="footer">
+    Criado por Luiz Alberto Cury Andalécio, Gabriel Lucas Silva Seabra e Julio Cesar Tonelini.
+  </div>
+
+  <script src="/src/js/login.js"></script>
+</body>
+</html>
+  

@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('/static/img/vintage-barber.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+.rye-regular {
+    font-family: "Rye", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.container {
+    width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #393939;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-family: 'Georgia', serif;
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 40px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input::placeholder {
+    color: #959595;
+}
+
+input,
+select,
+button {
+    font-size: 1.5em;
+    border: none;
+    background-color: #656565;
+    color: white;
+}
+button {
+    background-color: #9C9C9C;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 50px;
+    padding: 10px 20px;
+    align-self: center; 
+}
+
+button:hover {
+    background-color: #ccc;
+}
+
+.footer {
+    justify-content: center;
+    text-align: center;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.8em;
+    color: #ccc;
+}

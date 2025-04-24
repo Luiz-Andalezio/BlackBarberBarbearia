@@ -12,8 +12,11 @@ Sistema de agendamento online para barbearia, desenvolvido com HTML, CSS e JavaS
 ## 🚀 Como rodar localmente
 1. Abra o projeto com o Visual Studio Code.
 2. Instale a extensão "Live Server".
-3. Clique com o botão direito em `templates/login.html` e selecione **Open with Live Server**.
-4. Faça login com um usuário de teste para ser redirecionado à página `index.html`.
+3. Instale as dependências:
+```sudo apt install nodejs npm```
+```sudo npm install -g nodemon```
+4. Clique com o botão direito em `templates/login.html` e selecione **Open with Live Server**.
+5. Faça login com um usuário de teste para ser redirecionado à página `index.html`.
 
 ## 🛠️ Tecnologias
 - HTML5
