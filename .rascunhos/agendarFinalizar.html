@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1D1D1D;
+            color: #FFFFFF;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .service-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2C2C2C;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .schedule-button {
+            background-color: #28A745;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .schedule-button:hover {
+            background-color: #218838;
+        }
+
+        /* Estilos para o modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #2C2C2C;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            position: relative;
+            text-align: center;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .date-container, .professional-container, .time-container {
+            margin-top: 20px;
+        }
+
+        .date-container button, .professional-container button, .time-container button {
+            background-color: #1D1D1D;
+            color: white;
+            border: 1px solid #00BFFF;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .date-container button:hover, .professional-container button:hover, .time-container button:hover {
+            background-color: #00BFFF;
+            color: #1D1D1D;
+        }
+
+        .selected {
+            background-color: #00BFFF !important;
+            color: #1D1D1D !important;
+        }
+
+        .separator {
+            border-top: 1px solid #444;
+            margin: 15px 0;
+        }
+
+        .confirm-button {
+            display: block;
+            margin: 20px auto 0;
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: not-allowed;
+        }
+
+        .confirm-button.active {
+            background-color: #28A745;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="service-item">
+            <div class="service-info">
+                <div class="service-name">Cabelo</div>
+                <div class="service-price">R$ 30</div>
+                <div class="service-time">30 minutos</div>
+            </div>
+            <button class="schedule-button" onclick="openModal()">Agendar</button>
+        </div>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h3>Finalizar Agendamento</h3>
+
+            <div class="date-container">
+                <h4>Escolha a Data</h4>
+                <button>Seg<br>01</button>
+                <button>Ter<br>02</button>
+                <button>Qua<br>03</button>
+                <button>Qui<br>04</button>
+                <button>Sex<br>05</button>
+                <button>Sab<br>06</button>
+                <button>Dom<br>07</button>
+            </div>
+            
+            <div class="separator"></div>
+
+            <div class="professional-container">
+                <h4>Escolha o Profissional</h4>
+                <button>Finelas</button>
+                <button>João</button>
+            </div>
+            
+            <div class="separator"></div>
+
+            <div class="time-container" id="time-container" style="display: none;">
+                <h4>Escolha o Horário</h4>
+                <button>14:30</button>
+                <button>15:00</button>
+                <button>15:30</button>
+                <button>16:00</button>
+                <button>16:30</button>
+            </div>
+            
+            <button class="confirm-button" id="confirm-button">Agendar</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById("modal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+
+        const buttons = document.querySelectorAll(".date-container button, .professional-container button, .time-container button");
+        const timeContainer = document.getElementById("time-container");
+        const confirmButton = document.getElementById("confirm-button");
+        let selectedCount = 0;
+
+        buttons.forEach(button => {
+            button.addEventListener("click", function() {
+                this.parentElement.querySelectorAll("button").forEach(btn => btn.classList.remove("selected"));
+                this.classList.add("selected");
+                if (document.querySelector(".date-container .selected") && document.querySelector(".professional-container .selected")) {
+                    timeContainer.style.display = "block";
+                }
+                if (document.querySelector(".date-container .selected") && document.querySelector(".professional-container .selected") && document.querySelector(".time-container .selected")) {
+                    confirmButton.classList.add("active");
+                    confirmButton.removeAttribute("disabled");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
