@@ -10,7 +10,7 @@
 logs
 
 #sqliteDocs
-/src/libs/sql.js-1.13.0/
+.src/libs/sql.js-1.13.0/
 
 *.log
 npm-debug.log*
