@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <title>Login - Black Barber</title>
@@ -21,7 +22,8 @@
 
       <!-- Login -->
       <div id="loginFields">
-        <br><hr>
+        <br>
+        <hr>
         <label for="role">Entrar como:</label>
         <br>
         <select id="role" required>
@@ -39,12 +41,13 @@
         <input type="password" id="senha" placeholder="Digite sua senha..." required>
 
         <br><br>
-        <button type="submit">Confirmar</button>
+        <button type="submit" id="btnLogin">Confirmar</button>
       </div>
 
       <!-- Cadastro -->
       <div id="registerFields" style="display: none;">
-        <br><hr>
+        <br>
+        <hr>
         <label for="nome">Nome:</label>
         <br>
         <input type="text" id="nome" placeholder="Digite seu nome..." required>
@@ -70,7 +73,7 @@
         <input type="password" id="confirmarSenha" placeholder="Confirme sua senha..." required>
 
         <br><br>
-        <button type="submit">Confirmar</button>
+        <button type="submit" id="btnRegister">Confirmar</button>
       </div>
     </form>
   </div>
@@ -81,5 +84,5 @@
 
   <script src="/src/js/login.js"></script>
 </body>
+
 </html>
-  
