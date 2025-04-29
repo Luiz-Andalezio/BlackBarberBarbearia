@@ -35,7 +35,7 @@ app.post("/login", (req, res) => {
 
     if (row) {
       console.log(`Login bem-sucedido para o usuário: ${email}`);
-      res.json({ sucesso: true });
+      return res.json({ sucesso: true });
     } else {
       console.log(`Falha no login. Usuário não encontrado ou dados incorretos: ${email}`);
       res.json({ sucesso: false, mensagem: "Usuário não encontrado ou dados incorretos." });
