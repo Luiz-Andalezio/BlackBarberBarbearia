@@ -17,6 +17,7 @@ Sistema de agendamento online para barbearia, desenvolvido com HTML, CSS e JavaS
 ```sudo npm install```
 ```sudo npm install -g nodemon```
 ```sudo apt install node-typescript```
+`
 4. Clique com o botão direito em `templates/login.html` e selecione **Open with Live Server**.
 5. Faça login com um usuário de teste para ser redirecionado à página `index.html`.
 
