@@ -1,25 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Black Barber Barbearia</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Black Barber Barbearia</title>
+  <link rel="stylesheet" href="../css/index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="navbar">
-        <div>
-            <a href="#">Black Barber</a>
-            <a href="#">Boas-vindas</a>
-            <a href="#">Agendar</a>
-        </div>
-        <div>
-            <a href="login.html">Login</a>
-        </div>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-left">
+      <img src="../../static/img/logo.webp" alt="Logo Black Barber" class="logo">
+      <a href="index.html" class="tab active" id="boasVindasTab">Boas-vindas</a>
+      <a href="agendar.html" class="tab" id="agendarTab">Agendar</a>
     </div>
+    <div class="navbar-right">
+      <a href="login.html" class="tab" id="loginBtn">Logar</a>
+    </div>
+  </nav>
 
-    <div class="welcome-section">
-        <h1>Parabéns!</h1>
-        <p>Você conseguiu fazer login com sucesso. Bem-vindo à Black Barber Barbearia!</p>
+  <!-- Carousel -->
+  <section class="carousel">
+    <div class="slides">
+      <img src="../../static/img/barbearia_cont1.jpg" class="slide" id="barbearia_cont">
+      <img src="../../static/img/barbearia_cont2.png" class="slide active" id="barbearia_cont">
+      <img src="../../static/img/barbearia_cont3.webp" class="slide" id="barbearia_cont">
     </div>
+    <div class="dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </section>
+
+  <!-- Informações -->
+  <section class="info-container">
+    <div class="info-text" id="infoText">
+      <!-- Conteúdo carregado por info.ts -->
+    </div>
+    <div class="info-map">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.184776777627!2d-48.277896!3d-19.7547132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bad1ea28380eb1%3A0x97a0979bc601da1b!2sBarber%20house%20black!5e0!3m2!1spt-BR!2sbr!4v1684354685583!5m2!1spt-BR!2sbr"
+        width="300" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+
+  <script src="../dist/info.js" defer></script>
+  <script src="../dist/session.js" defer></script>
+  <script src="../js/carousel.js" defer></script>
 </body>
 </html>

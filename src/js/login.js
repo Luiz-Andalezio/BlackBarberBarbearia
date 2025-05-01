@@ -38,6 +38,11 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Resposta do servidor:", data);
 
         if (data.sucesso) {
+            const usuario = {
+                email: email,
+                tipo: tipo
+            };
+            sessionStorage.setItem("usuarioLogado", JSON.stringify(usuario));
             window.location.href = "../html/index.html";
         } else {
             alert(data.mensagem || "Credenciais inválidas!");
