@@ -50,18 +50,7 @@ body {
     text-shadow: none;
 }
 
-#boasVindasTab {
-    font-family: 'Playfair Display', serif;
-    font-size: 30px;
-    font-style: bold;
-}
-
-#agendarTab {
-    font-family: 'Playfair Display', serif;
-    font-size: 30px;
-    font-style: bold;
-}
-
+#navbarBtn,
 #loginBtn {
     font-family: 'Playfair Display', serif;
     font-size: 30px;

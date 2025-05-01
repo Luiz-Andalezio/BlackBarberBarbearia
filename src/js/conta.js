@@ -15,6 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         console.log("Usuário deslogado.", usuarioLogado);
 
-        window.location.href = "index.html";
+        window.location.href = "../index.html";
     });
 });

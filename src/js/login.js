@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 tipo: tipo
             };
             sessionStorage.setItem("usuarioLogado", JSON.stringify(usuario));
+            sessionStorage.setItem("tipo", tipo);
             window.location.href = "../html/index.html";
         } else {
             alert(data.mensagem || "Credenciais inválidas!");
