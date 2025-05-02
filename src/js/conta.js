@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Conta.js carregado.");
+    const tipo = sessionStorage.getItem("tipo");
     const userInfo = document.getElementById("userInfo");
     const usuarioLogado = JSON.parse(sessionStorage.getItem("usuarioLogado"));
 
@@ -15,6 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         console.log("Usuário deslogado.", usuarioLogado);
 
-        window.location.href = "../index.html";
+        if (tipo === "cliente") {
+            window.location.href = "index.html";
+        } else {
+            window.location.href = "../login.html";
+        }
     });
 });

@@ -28,7 +28,8 @@ Sistema de agendamento online para barbearia, desenvolvido com **HTML**, **CSS**
    sudo apt install node-typescript
    npm install bcrypt
    ```
-4. Clique com o botão direito em `src/html/index.html` e acione o **Live Server**.
+4. Entre no diretório principal do projeto via terminal e rode `npm start`.
+5. Clique com o botão direito em `src/html/index.html` e acione o **Live Server**.
 
 ---
 

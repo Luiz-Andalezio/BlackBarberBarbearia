@@ -44,7 +44,11 @@ document.addEventListener("DOMContentLoaded", () => {
             };
             sessionStorage.setItem("usuarioLogado", JSON.stringify(usuario));
             sessionStorage.setItem("tipo", tipo);
-            window.location.href = "../html/index.html";
+            if (tipo === "cliente") {
+                window.location.href = "../html/user/index.html";
+            } else {
+                window.location.href = "../html/admin/agenda.html";
+            }
         } else {
             alert(data.mensagem || "Credenciais inválidas!");
         }
@@ -75,7 +79,11 @@ document.addEventListener("DOMContentLoaded", () => {
         alert(data.mensagem);
 
         if (data.sucesso) {
-            window.location.href = "../html/index.html";
+            if (tipo === "cliente") {
+                window.location.href = "../html/user/index.html";
+            } else {
+                window.location.href = "../html/admin/agenda.html";
+            }
         }
     });
 });

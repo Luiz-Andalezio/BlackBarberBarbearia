@@ -12,12 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (infoText) {
     infoText.innerHTML = `
-      <p><strong class="freeman">Localização:</strong> <span class="tnr">${info.localizacao}</span></p>
-      <p><strong class="freeman">Dias de Atendimento e Horário:</strong> <span class="tnr">${info.horario}</span></p>
-      <p><strong class="freeman">Formas de Pagamento:</strong> <span class="tnr">${info.pagamento}</span></p>
-      <p><strong class="freeman">Comodidades:</strong> <span class="tnr">${info.comodidades}</span></p>
-      <p><strong class="freeman">Profissionais:</strong> <span class="tnr">${info.profissionais}</span></p>
-      <p><strong class="freeman">Contatos:</strong> <span class="tnr">${info.contatos}</span></p>
+      <p><strong class="freeman">Localização:</strong> <span class="tnr">${infoTs.localizacao}</span></p>
+      <p><strong class="freeman">Dias de Atendimento e Horário:</strong> <span class="tnr">${infoTs.horario}</span></p>
+      <p><strong class="freeman">Formas de Pagamento:</strong> <span class="tnr">${infoTs.pagamento}</span></p>
+      <p><strong class="freeman">Comodidades:</strong> <span class="tnr">${infoTs.comodidades}</span></p>
+      <p><strong class="freeman">Profissionais:</strong> <span class="tnr">${infoTs.profissionais}</span></p>
+      <p><strong class="freeman">Contatos:</strong> <span class="tnr">${infoTs.contatos}</span></p>
     `;
   }
 });
