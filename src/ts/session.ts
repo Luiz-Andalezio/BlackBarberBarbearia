@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (usuarioLogado && loginBtn && tipo === "cliente") {
       loginBtn.textContent = "Conta";
-      loginBtn.setAttribute("href", "user/contaUsuario.html");
+      loginBtn.setAttribute("href", "contaUsuario.html");
   } else if (usuarioLogado && loginBtn && tipo === "barbeiro") {
       loginBtn.textContent = "Conta Barbeiro";
-      loginBtn.setAttribute("href", "admin/contaBarbeiro.html");
+      loginBtn.setAttribute("href", "contaBarbeiro.html");
   }
 });
