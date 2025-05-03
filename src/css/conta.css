@@ -1,0 +1,18 @@
+.info-container {
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-text {
+    text-align: center;
+}
+
+#btnDeslogar {
+    margin-top: 30px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: #D7D7D7;
+    font-weight: bold;
+    cursor: pointer;
+}
