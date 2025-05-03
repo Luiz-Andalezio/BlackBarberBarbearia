@@ -7,6 +7,7 @@
     <title>Black Barber Barbearia</title>
     <link rel="icon" href="../../../static/img/logoWhite.png" type="image/x-icon">
     <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/tabelaAgendar.css">
     <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
 </head>
 
@@ -23,6 +24,58 @@
         </div>
     </nav>
 
+    <div class="container">
+        <h1 id="title">Serviços Disponíveis!</h1>
+        <div class="service-item">
+            <div class="service-info">
+                <div class="service-name">Cabelo</div>
+                <div class="service-price">R$ 30</div>
+                <div class="service-time">30 minutos</div>
+            </div>
+            <button class="schedule-button" onclick="openModal()">Agendar</button>
+        </div>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h3>Finalizar Agendamento</h3>
+
+            <div class="date-container">
+                <h4>Escolha a Data</h4>
+                <button>Seg<br>01</button>
+                <button>Ter<br>02</button>
+                <button>Qua<br>03</button>
+                <button>Qui<br>04</button>
+                <button>Sex<br>05</button>
+                <button>Sab<br>06</button>
+                <button>Dom<br>07</button>
+            </div>
+            
+            <div class="separator"></div>
+
+            <div class="professional-container">
+                <h4>Escolha o Profissional</h4>
+                <button>Finelas</button>
+                <button>João</button>
+            </div>
+            
+            <div class="separator"></div>
+
+            <div class="time-container" id="time-container" style="display: none;">
+                <h4>Escolha o Horário</h4>
+                <button>14:30</button>
+                <button>15:00</button>
+                <button>15:30</button>
+                <button>16:00</button>
+                <button>16:30</button>
+            </div>
+            
+            <button class="confirm-button" id="confirm-button">Agendar</button>
+        </div>
+    </div>
+
+    <script src="../../js/openModal.js" defer></script>
     <script src="../../dist/info.js" defer></script>
     <script src="../../dist/session.js" defer></script>
 </body>
