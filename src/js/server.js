@@ -1,3 +1,4 @@
+//Login e Cadastro
 const express = require("express");
 const sqlite3 = require("sqlite3").verbose();
 const cors = require("cors");
@@ -93,4 +94,42 @@ app.post("/register", (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
+});
+
+//Infos
+const fs = require("fs");
+
+const infoPath = path.join(__dirname, "../../data/info.json");
+
+// Rota para obter dados da home
+app.get("/api/info", (req, res) => {
+  fs.readFile(infoPath, "utf-8", (err, data) => {
+    if (err) {
+      console.error("Erro ao ler info.json:", err.message);
+      return res.status(500).json({ sucesso: false, mensagem: "Erro ao carregar informações." });
+    }
+
+    try {
+      const jsonData = JSON.parse(data);
+      res.json(jsonData);
+    } catch (parseErr) {
+      console.error("Erro ao parsear info.json:", parseErr.message);
+      res.status(500).json({ sucesso: false, mensagem: "Erro ao processar informações." });
+    }
+  });
+});
+
+// Rota para salvar dados da home
+app.post("/api/info", (req, res) => {
+  const novoConteudo = JSON.stringify(req.body, null, 2);
+
+  fs.writeFile(infoPath, novoConteudo, "utf-8", (err) => {
+    if (err) {
+      console.error("Erro ao salvar info.json:", err.message);
+      return res.status(500).json({ sucesso: false, mensagem: "Erro ao salvar informações." });
+    }
+
+    console.log("info.json atualizado com sucesso.");
+    res.sendStatus(200);
+  });
 });
