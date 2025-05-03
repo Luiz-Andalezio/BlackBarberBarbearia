@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Black Barber Barbearia</title>
     <link rel="icon" href="../../../static/img/logoWhite.png" type="image/x-icon">
-    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/editarHome.css">
     <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Freeman&family=Inter&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -15,17 +16,53 @@
     <nav class="navbar">
         <div class="navbar-left">
             <img src="../../../static/img/logo.webp" alt="Logo Black Barber" class="logo">
-            <a href="agenda.html" class="tab" id="navbarBtn">Agenda</a>
-            <a href="editarHome.html" class="tab active" id="navbarBtn">Editar Home</a>
-            <a href="editarServicos.html" class="tab" id="navbarBtn">Editar Serviços</a>
+            <a href="agenda.html" class="tab">Agenda</a>
+            <a href="editarHome.html" class="tab active">Editar Home</a>
+            <a href="editarServicos.html" class="tab">Editar Serviços</a>
         </div>
         <div class="navbar-right">
-            <a href="../login.html" class="tab" id="loginBtn">Logar</a>
+            <a href="../login.html" class="tab">Conta Barbeiro</a>
         </div>
     </nav>
 
-    <script src="../../js/conta.js" defer></script>
-    <script src="../../dist/session.js" defer></script>
+    <h1 id="title">Informações de Boas-vindas</h1>
+
+    <!-- Formulário de edição -->
+    <section class="info-form-container">
+        <form id="infoForm">
+            <label>Localização:
+                <input type="text" id="localizacao" />
+            </label>
+
+            <label>Link Google Maps:
+                <input type="text" id="mapa" />
+            </label>
+
+            <label>Dias de Atendimento:
+                <input type="text" id="horario" />
+            </label>
+
+            <label>Formas de Pagamento:
+                <input type="text" id="pagamento" />
+            </label>
+
+            <label>Comodidades:
+                <input type="text" id="comodidades" />
+            </label>
+
+            <label>Profissionais:
+                <input type="text" id="profissionais" />
+            </label>
+
+            <label>Contatos:
+                <input type="text" id="contatos" />
+            </label>
+
+            <button type="submit" id="salvarBtn" disabled>Salvar</button>
+        </form>
+    </section>
+
+    <script src="../../dist/editarInfo.js" defer></script>
 </body>
 
 </html>
