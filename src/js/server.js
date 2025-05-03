@@ -22,7 +22,6 @@ const db = new sqlite3.Database(dbPath, (err) => {
 // Rota de login
 app.post("/login", (req, res) => {
   const { email, senha, tipo } = req.body;
-  console.log("Recebido no login:", req.body);
 
   if (!email || !senha || !tipo) {
     console.log("Tentativa de login com campos obrigatórios não preenchidos.");
