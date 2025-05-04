@@ -141,17 +141,6 @@ app.post("/api/info", (req, res) => {
 const servicosPath = path.join(__dirname, "../../data/servicos.json");
 const agendamentosPath = path.join(__dirname, "../../data/agendamentos.json");
 
-// Buscar barbeiros (usuários id 1 e 2)
-app.get("/api/barbeiros", (req, res) => {
-  db.all(`SELECT id, nome FROM usuarios WHERE id IN (1, 2)`, [], (err, rows) => {
-    if (err) {
-      console.error("Erro ao buscar barbeiros:", err.message);
-      return res.status(500).json({ sucesso: false, mensagem: "Erro ao buscar barbeiros." });
-    }
-    res.json(rows);
-  });
-});
-
 // Buscar serviços
 app.get("/api/servicos", (req, res) => {
   fs.readFile(servicosPath, "utf8", (err, data) => {
@@ -200,14 +189,45 @@ app.put("/api/servicos/:id", (req, res) => {
 });
 
 // Deletar serviço
-app.delete("/api/servicos/:id", (req, res) => {
-  const { id } = req.params;
+app.get("/api/servicos", async (req, res) => {
+  try {
+    const data = await fsPromises.readFile(servicosPath, "utf8");
+    const servicos = JSON.parse(data);
+    res.json(servicos);
+  } catch (error) {
+    console.error("Erro ao buscar serviços:", error.message);
+    res.status(500).json({ sucesso: false, mensagem: "Erro ao carregar serviços." });
+  }
+});
 
-  let servicos = JSON.parse(fs.readFileSync(servicosPath, "utf8"));
-  servicos = servicos.filter(serv => serv.id != id);
+// Rota para obter os serviços
+app.get('/api/servicos', (req, res) => {
+  fs.readFile(servicosPath, 'utf8', (err, data) => {
+      if (err) return res.status(500).json({ error: 'Erro ao ler os serviços.' });
+      res.json(JSON.parse(data));
+  });
+});
 
-  fs.writeFileSync(servicosPath, JSON.stringify(servicos, null, 2));
-  res.json({ sucesso: true, mensagem: "Serviço removido." });
+// Rota para salvar todos os serviços (usada após adição/edição/exclusão)
+app.post('/api/servicos', (req, res) => {
+  const novosServicos = req.body;
+  fs.writeFile(servicosPath, JSON.stringify(novosServicos, null, 2), 'utf8', (err) => {
+      if (err) return res.status(500).json({ error: 'Erro ao salvar os serviços.' });
+      res.json({ success: true });
+  });
+});
+
+// ===== ROTAS DE AGENDAMENTOS =====
+
+// Buscar barbeiros (usuários id 1 e 2)
+app.get("/api/barbeiros", (req, res) => {
+  db.all(`SELECT id, nome FROM usuarios WHERE id IN (1, 2)`, [], (err, rows) => {
+    if (err) {
+      console.error("Erro ao buscar barbeiros:", err.message);
+      return res.status(500).json({ sucesso: false, mensagem: "Erro ao buscar barbeiros." });
+    }
+    res.json(rows);
+  });
 });
 
 // Agendar serviço
@@ -227,9 +247,3 @@ app.post("/api/agendar", (req, res) => {
   res.json({ sucesso: true, mensagem: "Agendamento realizado." });
 });
 
-// Buscar agendamentos
-app.get("/api/agendamentos", (req, res) => {
-  if (!fs.existsSync(agendamentosPath)) return res.json([]);
-  const agendamentos = JSON.parse(fs.readFileSync(agendamentosPath, "utf8"));
-  res.json(agendamentos);
-});

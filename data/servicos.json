@@ -3,12 +3,12 @@
         "id": 1,
         "nome": "Corte de Cabelo",
         "preco": 30,
-        "tempo": "30min"
+        "tempo": "30"
     },
     {
         "id": 2,
         "nome": "Barba",
         "preco": 20,
-        "tempo": "20min"
+        "tempo": "20"
     }
 ]
