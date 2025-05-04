@@ -7,6 +7,7 @@
     <title>Black Barber Barbearia</title>
     <link rel="icon" href="../../../static/img/logoWhite.png" type="image/x-icon">
     <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/editarServicos.css">
     <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
 </head>
 
@@ -24,6 +25,31 @@
         </div>
     </nav>
 
+    <!-- Conteúdo principal -->
+    <div class="agendamento">
+        <h2>Agendar Serviço</h2>
+        <div class="form-group">
+            <label for="agendamento-data">Data</label>
+            <input type="date" id="agendamento-data">
+        </div>
+        <div class="form-group">
+            <label for="agendamento-barbeiro">Barbeiro</label>
+            <select id="agendamento-barbeiro"></select>
+        </div>
+        <div class="form-group">
+            <label for="agendamento-servico">Serviço</label>
+            <select id="agendamento-servico"></select>
+        </div>
+        <div class="form-group">
+            <label for="agendamento-horario">Horário</label>
+            <select id="agendamento-horario"></select>
+        </div>
+        <button class="button save-button" id="btnAgendar">Agendar</button>
+        <p id="agendamento-mensagem"></p>
+    </div>    
+
+    <script src="../../js/agendamento.js" defer></script>
+    <script src="../../js/servicesList.js"></script>
     <script src="../../js/conta.js" defer></script>
     <script src="../../dist/session.js" defer></script>
 </body>
