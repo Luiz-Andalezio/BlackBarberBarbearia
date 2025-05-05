@@ -171,50 +171,15 @@ app.post("/api/servicos", (req, res) => {
   res.json({ sucesso: true, mensagem: "Serviço criado." });
 });
 
-// Atualizar serviço
-app.put("/api/servicos/:id", (req, res) => {
-  const { id } = req.params;
-  const { nome, preco, duracao } = req.body;
-
-  let servicos = JSON.parse(fs.readFileSync(servicosPath, "utf8"));
-  const index = servicos.findIndex(serv => serv.id == id);
-
-  if (index === -1) {
-    return res.status(404).json({ sucesso: false, mensagem: "Serviço não encontrado." });
+// Atualizar serviços
+app.put("/api/servicos", (req, res) => {
+  const { servicos } = req.body;
+  if (!Array.isArray(servicos)) {
+    return res.status(400).json({ sucesso: false, mensagem: "Formato inválido de serviços." });
   }
 
-  servicos[index] = { id: Number(id), nome, preco, duracao };
   fs.writeFileSync(servicosPath, JSON.stringify(servicos, null, 2));
-  res.json({ sucesso: true, mensagem: "Serviço atualizado." });
-});
-
-// Deletar serviço
-app.get("/api/servicos", async (req, res) => {
-  try {
-    const data = await fsPromises.readFile(servicosPath, "utf8");
-    const servicos = JSON.parse(data);
-    res.json(servicos);
-  } catch (error) {
-    console.error("Erro ao buscar serviços:", error.message);
-    res.status(500).json({ sucesso: false, mensagem: "Erro ao carregar serviços." });
-  }
-});
-
-// Rota para obter os serviços
-app.get('/api/servicos', (req, res) => {
-  fs.readFile(servicosPath, 'utf8', (err, data) => {
-      if (err) return res.status(500).json({ error: 'Erro ao ler os serviços.' });
-      res.json(JSON.parse(data));
-  });
-});
-
-// Rota para salvar todos os serviços (usada após adição/edição/exclusão)
-app.post('/api/servicos', (req, res) => {
-  const novosServicos = req.body;
-  fs.writeFile(servicosPath, JSON.stringify(novosServicos, null, 2), 'utf8', (err) => {
-      if (err) return res.status(500).json({ error: 'Erro ao salvar os serviços.' });
-      res.json({ success: true });
-  });
+  res.json({ sucesso: true, mensagem: "Serviços atualizados." });
 });
 
 // ===== ROTAS DE AGENDAMENTOS =====

@@ -80,11 +80,12 @@ function coletarServicosDaTela() {
     const servicos = [];
     const serviceDivs = document.querySelectorAll('.service-edit');
 
-    serviceDivs.forEach(div => {
+    serviceDivs.forEach((div, index) => {
         const inputs = div.querySelectorAll('input');
         servicos.push({
+            id: index + 1,
             nome: inputs[0].value,
-            preco: inputs[1].value,
+            preco: Number(inputs[1].value),
             tempo: inputs[2].value
         });
     });
@@ -95,11 +96,21 @@ function coletarServicosDaTela() {
 async function salvarServicosNoServidor() {
     const servicos = coletarServicosDaTela();
 
-    await fetch('/api/servicos', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(servicos)
-    });
+    try {
+        const res = await fetch("http://localhost:3000/api/servicos", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ servicos })
+        });
+
+        if (!res.ok) {
+            throw new Error("Erro ao salvar serviços no servidor");
+        }
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 document.addEventListener('DOMContentLoaded', carregarServicos);
