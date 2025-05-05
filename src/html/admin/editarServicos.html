@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Barber - Editar Serviços</title>
+    <link rel="icon" href="../../../static/img/logoWhite.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/editarServicos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Freeman&family=Inter&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="../../../static/img/logo.webp" alt="Logo Black Barber" class="logo">
+            <a href="agenda.html" class="tab" id="navbarBtn">Agenda</a>
+            <a href="editarHome.html" class="tab" id="navbarBtn">Editar Home</a>
+            <a href="editarServicos.html" class="tab active" id="navbarBtn">Editar Serviços</a>
+        </div>
+        <div class="navbar-right">
+            <a href="../login.html" class="tab" id="loginBtn">Logar</a>
+        </div>
+    </nav>
+
+    <!-- Área para adicionar novo serviço -->
+    <div class="container">
+        <h2 id="title1">Adicionar Novo Serviço</h2>
+        <form id="new-service-form" class="new-service">
+            <div class="form-group">
+                <label for="new-service-name">Nome do Serviço</label>
+                <input type="text" id="new-service-name" placeholder="Ex: Cabelo e Barba">
+            </div>
+            <div class="form-group">
+                <label for="new-service-price">Preço (R$)</label>
+                <input type="number" id="new-service-price" placeholder="Ex: 45">
+            </div>
+            <div class="form-group">
+                <label for="new-service-time">Tempo (minutos)</label>
+                <input type="number" id="new-service-time" placeholder="Ex: 60">
+            </div>
+            <button type="button" class="button save-button" onclick="addService()">Adicionar Serviço</button>
+        </form>
+        <hr>
+        <h2 id="title2">Serviços Existentes</h2>
+        <div id="services-list"></div>
+    </div>
+
+    <script src="../../js/servicesList.js" defer></script>
+    <script src="../../js/conta.js" defer></script>
+    <script src="../../dist/session.js" defer></script>
+
+</body>
+
+</html>
