@@ -7,14 +7,12 @@ Desenvolvido utilizando **HTML5**, **CSS3**, **JavaScript**, com backend em **No
 
 ---
 
-# 📋 Sobre o Projeto
+## 📋 Sobre o Projeto
 
 O **Black Barber Web** nasce como um exemplo de solução para a necessidade de otimizar o agendamento de clientes em barbearias, eliminar conflitos de horário e proporcionar uma experiência de marca mais moderna.
 Com um sistema simples e eficiente, profissionais poderão gerenciar serviços, horários e informações de clientes de forma ágil.
 
----
-
-## 👥 Equipe do Projeto
+### 👥 Equipe do Projeto
 
 | Nome                        | Função                                   |
 | --------------------------- | ---------------------------------------- |
@@ -23,15 +21,45 @@ Com um sistema simples e eficiente, profissionais poderão gerenciar serviços, 
 | Julio Cesar Tonelini        | Programador                              |
 | Camilo de Lelis Tosta Paula | Professor Orientador                     |
 
----
+### 🎯 Funcionalidades Principais
 
-## 📁 Estrutura do Projeto
+* Agendamento online de cortes de cabelo.
+* Cadastro e login de usuários com segurança.
+* Área do cliente: histórico de agendamentos.
+* Área do barbeiro: gestão de agendamentos e controle de informações institucionais.
+
+### 🛠️ Tecnologias Utilizadas
+
+* **Frontend**:
+
+  * HTML5
+  * CSS3
+  * JavaScript
+* **Backend**:
+
+  * Node.js
+  * Express.js (futuro planejamento)
+  * SQLite (via SQL.js)
+* **Outros**:
+
+  * TypeScript (parcial)
+  * Bcrypt (criptografia de senhas)
+  * Nodemon (para hot reload no desenvolvimento)
+
+### 📁 Estrutura do Projeto
 
 * `data/` – Arquivos json para armazenar dados de objetos.
 * `database/` – Arquivos e configurações SQLite para armazenar dados dos usuários.
 * `docs/` – Exemplos de documentação do projeto em pdf.
 * `src/` – Páginas HTML que compõem a interface, folhas de estilo CSS, códigos-fonte JavaScript e TypeScript.
 * `static/` – Imagens, ícones, protótipos, referências de design e demais arquivos estáticos.
+
+---
+
+## 📈 Status do Projeto
+
+> **Versão atual**: Protótipado em ambiente local: 56%
+> **Próximos passos**: Otimização do backend, integração de login com validações completas e deploy futuro.
 
 ---
 
@@ -54,42 +82,6 @@ Com um sistema simples e eficiente, profissionais poderão gerenciar serviços, 
    npm start
    ```
 5. Para visualizar a aplicação, clique com o botão direito no arquivo `src/html/index.html` e selecione **Open with Live Server**.
-
----
-
-## 🛠️ Tecnologias Utilizadas
-
-* **Frontend**:
-
-  * HTML5
-  * CSS3
-  * JavaScript
-* **Backend**:
-
-  * Node.js
-  * Express.js (futuro planejamento)
-  * SQLite (via SQL.js)
-* **Outros**:
-
-  * TypeScript (parcial)
-  * Bcrypt (criptografia de senhas)
-  * Nodemon (para hot reload no desenvolvimento)
-
----
-
-## 🎯 Funcionalidades Principais
-
-* Agendamento online de cortes de cabelo.
-* Cadastro e login de usuários com segurança.
-* Área do cliente: histórico de agendamentos.
-* Área do barbeiro: gestão de agendamentos e controle de informações institucionais.
-
----
-
-# 📈 Status do Projeto
-
-> **Versão atual**: Protótipado em ambiente local: 56%
-> **Próximos passos**: Otimização do backend, integração de login com validações completas e deploy futuro.
 
 ---
 
