@@ -1,8 +1,8 @@
 ---
 
-# 💈 Black Barber Web
+# 💈 Black Barber Barbearia
 
-Sistema de agendamento online para barbearias, focado na modernização da gestão de serviços e no aumento da satisfação do cliente.
+Projeto web baseado em um sistema de agendamento online para barbearias, focado na modernização da gestão de serviços e no aumento da satisfação do cliente.
 Desenvolvido utilizando **HTML5**, **CSS3**, **JavaScript**, com backend em **Node.js** e banco de dados **SQLite**.
 
 ---
@@ -58,7 +58,8 @@ Com um sistema simples e eficiente, profissionais poderão gerenciar serviços, 
 
 ## 📈 Status do Projeto
 
-> **Versão atual**: Protótipado em ambiente local: 56%
+> **Progresso atual**: 56% (Prototipado em ambiente local).
+
 > **Próximos passos**: Otimização do backend, integração de login com validações completas e deploy futuro.
 
 ---
@@ -92,8 +93,8 @@ Este repositório tenta seguir o padrão [Conventional Commits](https://www.conv
 ### ✔️ Formato
 
 ```bash
-<tipo>(escopo): <mensagem breve sobre o que o commit faz>
-<!-- Observação, é necessário dar um <ENTER> após os dois pontos da definição do escopo. -->
+<tipo>(escopo):<ENTER>
+<mensagem breve sobre o que o commit faz>
 ```
 
 ### 🔧 Tipos mais comuns
@@ -115,9 +116,14 @@ Define o título do commit referente a parte do projeto afetada, como um módulo
 ### 📝 Exemplo
 
 ```bash
-refactor(cryptography): Aprimora a indentação.
-fix(login-page): Corrige bug de login nulo.
-feat(carousel): Implementa o carrossel na página inicial.
+git commit -am "refactor(cryptography):
+> Aprimora a indentação."
+
+git commit -am "fix(login-page):
+> Corrige bug de login nulo."
+
+git commit -am "feat(carousel):
+> Implementa o carrossel na página inicial."
 ```
 
 ---
