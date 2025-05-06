@@ -1,13 +1,31 @@
 const servicesList = document.getElementById('services-list');
 
 async function carregarServicos() {
-    const res = await fetch("http://localhost:3000/api/servicos")
+    try {
+        const res = await fetch("http://localhost:3000/api/servicos");
 
-    const servicos = await res.json();
+        if (!res.ok) {
+            mostrarTelaDeAtualizacao();
+            return;
+        }
 
-    servicos.forEach(servico => {
-        adicionarServicoNaTela(servico.nome, servico.preco, servico.tempo);
-    });
+        const servicos = await res.json();
+
+        servicos.forEach(servico => {
+            adicionarServicoNaTela(servico.nome, servico.preco, servico.tempo);
+        });
+    } catch (error) {
+        mostrarTelaDeAtualizacao();
+    }
+}
+
+function mostrarTelaDeAtualizacao() {
+    const overlay = document.getElementById('loading-overlay');
+    overlay.classList.remove('hidden');
+
+    setTimeout(() => {
+        location.reload();
+    }, 500);
 }
 
 function adicionarServicoNaTela(nome, preco, tempo) {
