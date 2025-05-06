@@ -58,7 +58,8 @@ Com um sistema simples e eficiente, profissionais poderão gerenciar serviços, 
 
 ## 📈 Status do Projeto
 
-> **Versão atual**: Protótipado em ambiente local: 56%
+> **Progresso atual**: 56% (Prototipado em ambiente local).
+
 > **Próximos passos**: Otimização do backend, integração de login com validações completas e deploy futuro.
 
 ---
@@ -115,9 +116,14 @@ Define o título do commit referente a parte do projeto afetada, como um módulo
 ### 📝 Exemplo
 
 ```bash
-refactor(cryptography): Aprimora a indentação.
-fix(login-page): Corrige bug de login nulo.
-feat(carousel): Implementa o carrossel na página inicial.
+git commit -am "refactor(cryptography):
+> Aprimora a indentação."
+
+git commit -am "fix(login-page):
+> Corrige bug de login nulo."
+
+git commit -am "feat(carousel):
+> Implementa o carrossel na página inicial."
 ```
 
 ---
