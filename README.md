@@ -61,7 +61,7 @@ Este repositório tenta seguir o padrão [Conventional Commits](https://www.conv
 - `feat`: Nova funcionalidade
 - `fix`: Correção de bugs
 - `docs`: Alterações na documentação
-- `style`: Ajustes de estilo (espaçamento, ponto e vírgula, imagens, etc.)
+- `style`: Ajustes de estilo (css, cores, imagens, etc.)
 - `refactor`: Refatoração de código (sem mudança de comportamento)
 - `perf`: Melhorias de performance
 - `test`: Criação ou modificação de testes
@@ -75,9 +75,9 @@ Define o título do commit referente a parte do projeto afetada, como um módulo
 ### 📝 Exemplo
 
 ```bash
-feat(cryptography): Adiciona verificação de senha com bcrypt.
+refactor(cryptography): Aprimora a indentação.
 fix(login-page): Corrige bug de login nulo.
-style(carousel): Atualiza a identação.
+feat(carousel): Implementa o carrossel na página inicial.
 ```
 
 ---
