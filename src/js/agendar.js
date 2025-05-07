@@ -1,61 +1,64 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const servicosLista = document.getElementById("servicos-lista");
-    const modalLogin = document.getElementById("modal-login");
-    const btnLogin = document.getElementById("btn-login");
-    const btnCancelar = document.getElementById("btn-cancelar");
+    const servicesContainer = document.getElementById("services-container");
+    const modalLogin = document.getElementById("login-modal");
+    const btnLogin = document.getElementById("login-button");
+    const btnCancelar = document.getElementById("later-button");
+    const closeModal = document.getElementById("close-login-modal");
 
     fetch("http://localhost:3000/api/servicos")
         .then(res => res.json())
         .then(servicos => {
-            if (servicosLista) {
-                servicosLista.innerHTML = "";
+            servicesContainer.innerHTML = "";
 
-                servicos.forEach(servico => {
-                    const linha = document.createElement("tr");
+            servicos.forEach(servico => {
+                const item = document.createElement("div");
+                item.className = "service-item";
 
-                    linha.innerHTML = `
-                        <td>${servico.nome}</td>
-                        <td>R$ ${servico.preco},00</td>
-                        <td>${servico.tempo} min</td>
-                        <td><button class="btn-agendar" data-id="${servico.id}">Agendar</button></td>
-                    `;
+                item.innerHTML = `
+                    <div class="service-info">
+                        <span class="service-name">${servico.nome}</span>
+                        <span class="service-price">R$ ${servico.preco},00</span>
+                        <span class="service-time">${servico.tempo} min</span>
+                    </div>
+                    <button class="schedule-button" data-id="${servico.id}">Agendar</button>
+                `;
 
-                    servicosLista.appendChild(linha);
+                servicesContainer.appendChild(item);
+            });
+
+            const botoes = document.querySelectorAll(".schedule-button");
+            botoes.forEach(botao => {
+                botao.addEventListener("click", () => {
+                    if (!isUserLoggedIn()) {
+                        modalLogin.style.display = "flex";
+                    } else {
+                        console.log("Usuário logado - abrir próxima etapa de agendamento.");
+                    }
                 });
-
-                const botoesAgendar = document.querySelectorAll(".btn-agendar");
-
-                botoesAgendar.forEach(botao => {
-                    botao.addEventListener("click", function () {
-                        if (!isUserLoggedIn()) {
-                            if (modalLogin) modalLogin.style.display = "block";
-                        } else {
-                            console.log("Usuário logado, prosseguindo para agendamento...");
-                        }
-                    });
-                });
-            }
+            });
         })
         .catch(err => {
             console.error("Erro ao carregar serviços:", err);
-            if (servicosLista) {
-                servicosLista.innerHTML = "<tr><td colspan='4'>Erro ao carregar serviços.</td></tr>";
-            }
+            servicesContainer.innerHTML = "<p>Erro ao carregar serviços.</p>";
         });
 
     if (btnLogin) {
-        btnLogin.addEventListener("click", function () {
+        btnLogin.addEventListener("click", () => {
             window.location.href = "login.html";
         });
     }
 
-    if (btnCancelar) {
-        btnCancelar.addEventListener("click", function () {
-            if (modalLogin) modalLogin.style.display = "none";
+    if (btnCancelar || closeModal) {
+        [btnCancelar, closeModal].forEach(el => {
+            if (el) {
+                el.addEventListener("click", () => {
+                    modalLogin.style.display = "none";
+                });
+            }
         });
     }
 });
 
 function isUserLoggedIn() {
-    return sessionStorage.getItem('usuarioLogado') !== null;
+    return sessionStorage.getItem("usuarioLogado") !== null;
 }
