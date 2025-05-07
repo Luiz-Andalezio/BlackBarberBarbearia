@@ -1,21 +1,28 @@
-# Security Policy
+# Política de Segurança – Projeto Black Barber Barbearia
 
-## Supported Versions
+## Versões com Suporte
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+**Observação:** O software ainda não possui releases para que haja versões com suporte.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+## Relato de Vulnerabilidades
 
-## Reporting a Vulnerability
+Caso você identifique alguma falha de segurança no sistema, sua colaboração será extremamente bem-vinda.
 
-Use this section to tell people how to report a vulnerability.
+### Como reportar:
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+* Envie um e-mail diretamente para a equipe responsável pelo projeto (luizandalecio19@gmail.com).
+* No relatório, inclua:
+
+  * Descrição detalhada da vulnerabilidade;
+  * Versão do sistema afetada;
+  * Etapas para reproduzir o problema (se possível);
+  * Capturas de tela ou registros de erro, se aplicável.
+
+### O que esperar após o envio:
+
+* **Confirmação de recebimento:** Você receberá uma resposta inicial em até 5 dias úteis.
+* **Análise e verificação:** A equipe técnica analisará a falha e determinará seu impacto.
+* **Resposta formal:** Caso a vulnerabilidade seja validada, será iniciada uma correção. Se não for considerada crítica ou relevante, será enviada uma justificativa com transparência.
+* **Privacidade:** As informações enviadas serão tratadas com total sigilo e não serão compartilhadas sem autorização.
+
+Nosso compromisso é manter o sistema seguro, confiável e transparente, tanto para fins acadêmicos quanto para aprendizado prático.
