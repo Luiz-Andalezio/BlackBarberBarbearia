@@ -1,13 +1,6 @@
-## Licença de Uso – Projeto Black Barber Barbearia
-
-Este projeto está licenciado sob os termos da Licença MIT, uma das mais permissivas e amplamente utilizadas no desenvolvimento de software de código aberto.
-
-### Texto Original da Licença MIT:
-
-```
 MIT License
 
-Copyright (c) 2025 Luiz Alberto Cury Andalécio, Gabriel Lucas Silva Seabra e Julio Cesar Tonelini.
+Copyright (c) 2025 Luiz Alberto Cury Andalécio, Gabriel Lucas Silva Seabra and Julio Cesar Tonelini.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -26,17 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-```
-
-### O que isso significa?
-
-A Licença MIT permite que qualquer pessoa:
-
-* Use, copie, modifique e distribua o sistema;
-* Faça uso comercial ou pessoal do software;
-* Integre partes do projeto em outras aplicações.
-
-**Restrições principais:**
-
-* É obrigatório manter os créditos do autor nas cópias ou versões derivadas;
-* O sistema é fornecido "como está", sem garantias de funcionamento ou suporte técnico.
