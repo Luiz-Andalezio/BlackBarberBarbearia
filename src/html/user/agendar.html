@@ -40,6 +40,34 @@
         </div>
     </div>
 
+    <!-- Modal de Finalização de Agendamento -->
+    <div id="agendamento-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-agendamento-modal" class="close-modal">&times;</span>
+
+            <h2>Escolha a Data</h2>
+            <div class="date-container" id="calendar-carousel">
+                <!-- Calendário dinâmico -->
+            </div>
+
+            <div class="separator"></div>
+
+            <h2>Escolha o Barbeiro</h2>
+            <div class="professional-container" id="barbeiros-container">
+                <!-- Botões de barbeiros -->
+            </div>
+
+            <div class="separator"></div>
+
+            <h2>Escolha o Horário</h2>
+            <div class="time-container" id="horarios-container">
+                <!-- Botões de horários -->
+            </div>
+
+            <button id="confirmar-agendamento" class="confirm-button">Confirmar Agendamento</button>
+        </div>
+    </div>
+
     <script src="../../js/agendar.js" defer></script>
     <script src="../../dist/session.js" defer></script>
 </body>
