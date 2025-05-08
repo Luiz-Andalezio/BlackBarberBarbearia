@@ -59,7 +59,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (btnLogin) btnLogin.addEventListener("click", () => window.location.href = "login.html");
     [btnCancelar, closeLoginModal].forEach(el => el?.addEventListener("click", () => modalLogin.style.display = "none"));
-    closeAgendamentoModal?.addEventListener("click", () => modalAgendamento.style.display = "none");
+    if (closeAgendamentoModal) {
+        closeAgendamentoModal.addEventListener("click", () => {
+            modalAgendamento.style.display = "none";
+            resetarSelecoes();
+            limparModalAgendamento();
+        });
+    }
 
     btnConfirmarAgendamento.addEventListener("click", confirmarAgendamento);
 
@@ -68,6 +74,23 @@ document.addEventListener("DOMContentLoaded", function () {
         dataSelecionada = null;
         horarioSelecionado = null;
         btnConfirmarAgendamento.classList.remove("active");
+    }
+
+    function limparModalAgendamento() {
+        document.getElementById("calendar-carousel").innerHTML = "";
+        document.getElementById("barbeiros-container").innerHTML = "";
+        document.getElementById("horarios-container").innerHTML = "";
+
+        barbeiroSelecionado = null;
+        dataSelecionada = null;
+        horarioSelecionado = null;
+        servicoSelecionado = null;
+
+        document.querySelectorAll(".selected").forEach(el => el.classList.remove("selected"));
+
+        const btnConfirmar = document.getElementById("confirmar-agendamento");
+        btnConfirmar.classList.remove("active");
+        btnConfirmar.disabled = true;
     }
 
     async function carregarAgendamentos() {
@@ -239,16 +262,16 @@ document.addEventListener("DOMContentLoaded", function () {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(agendamento)
         })
-        .then(res => res.json())
-        .then(data => {
-            if (data.sucesso) {
-                alert("Agendamento realizado com sucesso!");
-                modalAgendamento.style.display = "none";
-            } else {
-                alert("Erro ao realizar agendamento.");
-            }
-        })
-        .catch(err => console.error("Erro ao enviar agendamento:", err));
+            .then(res => res.json())
+            .then(data => {
+                if (data.sucesso) {
+                    alert("Agendamento realizado com sucesso!");
+                    modalAgendamento.style.display = "none";
+                } else {
+                    alert("Erro ao realizar agendamento.");
+                }
+            })
+            .catch(err => console.error("Erro ao enviar agendamento:", err));
     }
 });
 

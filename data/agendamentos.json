@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1746677295249,
+    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "servico": "Cabelo",
+    "barbeiro": "Fulano",
+    "data": "2026-02-03",
+    "horario": "09:00"
+  },
+  {
+    "id": 1746677618867,
+    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "servico": "Cabelo",
+    "barbeiro": "Fulano",
+    "data": "2025-05-08",
+    "horario": "09:00"
+  },
+  {
+    "id": 1746677784627,
+    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "servico": "Cabelo",
+    "barbeiro": "Fulaninho",
+    "data": "2025-05-14",
+    "horario": "09:00"
+  }
+]
