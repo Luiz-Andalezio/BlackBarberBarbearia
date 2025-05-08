@@ -197,6 +197,24 @@ app.get("/api/barbeiros", (req, res) => {
   });
 });
 
+// Buscar todos os agendamentos
+app.get("/api/agendamentos", (req, res) => {
+  fs.readFile(agendamentosPath, "utf8", (err, data) => {
+    if (err) {
+      console.error("Erro ao ler agendamentos:", err.message);
+      return res.status(500).json({ sucesso: false, mensagem: "Erro ao ler agendamentos." });
+    }
+
+    try {
+      const agendamentos = JSON.parse(data);
+      res.json(agendamentos);
+    } catch (e) {
+      console.error("Erro ao parsear agendamentos:", e.message);
+      res.status(500).json({ sucesso: false, mensagem: "Erro no formato de agendamentos." });
+    }
+  });
+});
+
 // Agendar serviço
 app.post("/api/agendamentos", (req, res) => {
   const { usuario, servico, barbeiro, data, horario } = req.body;
