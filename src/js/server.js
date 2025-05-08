@@ -135,7 +135,7 @@ app.post("/api/info", (req, res) => {
   });
 });
 
-// ===== ROTAS DE SERVIÇOS E AGENDAMENTOS =====
+// ===== ROTAS DE SERVIÇOS =====
 
 // Caminhos dos arquivos
 const servicosPath = path.join(__dirname, "../../data/servicos.json");
@@ -184,31 +184,63 @@ app.put("/api/servicos", (req, res) => {
 
 // ===== ROTAS DE AGENDAMENTOS =====
 
-// Buscar barbeiros (usuários id 1 e 2)
+// Buscar barbeiros (usuários que possuem o tipo = "barbeiro")
 app.get("/api/barbeiros", (req, res) => {
-  db.all(`SELECT id, nome FROM usuarios WHERE id IN (1, 2)`, [], (err, rows) => {
+  const query = `SELECT id, nome FROM usuarios WHERE tipo = 'barbeiro'`;
+
+  db.all(query, [], (err, rows) => {
+      if (err) {
+          console.error("Erro ao buscar barbeiros:", err.message);
+          return res.status(500).json({ sucesso: false, mensagem: "Erro ao buscar barbeiros." });
+      }
+      res.json(rows);
+  });
+});
+
+// Buscar todos os agendamentos
+app.get("/api/agendamentos", (req, res) => {
+  fs.readFile(agendamentosPath, "utf8", (err, data) => {
     if (err) {
-      console.error("Erro ao buscar barbeiros:", err.message);
-      return res.status(500).json({ sucesso: false, mensagem: "Erro ao buscar barbeiros." });
+      console.error("Erro ao ler agendamentos:", err.message);
+      return res.status(500).json({ sucesso: false, mensagem: "Erro ao ler agendamentos." });
     }
-    res.json(rows);
+
+    try {
+      const agendamentos = JSON.parse(data);
+      res.json(agendamentos);
+    } catch (e) {
+      console.error("Erro ao parsear agendamentos:", e.message);
+      res.status(500).json({ sucesso: false, mensagem: "Erro no formato de agendamentos." });
+    }
   });
 });
 
 // Agendar serviço
-app.post("/api/agendar", (req, res) => {
-  const { servico, data, horario, barbeiro } = req.body;
-  if (!servico || !data || !horario || !barbeiro) {
-    return res.status(400).json({ sucesso: false, mensagem: "Dados incompletos." });
+app.post("/api/agendamentos", (req, res) => {
+  const { usuario, servico, barbeiro, data, horario } = req.body;
+
+  if (!usuario || !servico || !barbeiro || !data || !horario) {
+      return res.status(400).json({ sucesso: false, mensagem: "Todos os campos são obrigatórios." });
   }
 
   let agendamentos = [];
   if (fs.existsSync(agendamentosPath)) {
-    agendamentos = JSON.parse(fs.readFileSync(agendamentosPath, "utf8"));
+      agendamentos = JSON.parse(fs.readFileSync(agendamentosPath, "utf8"));
   }
 
-  agendamentos.push({ id: Date.now(), servico, data, horario, barbeiro });
+  const novoAgendamento = {
+      id: Date.now(),
+      usuario,
+      servico,
+      barbeiro,
+      data,     //formato: 2025-05-08
+      horario   //formato: 08:00
+  };
+
+  agendamentos.push(novoAgendamento);
+
   fs.writeFileSync(agendamentosPath, JSON.stringify(agendamentos, null, 2));
-  res.json({ sucesso: true, mensagem: "Agendamento realizado." });
+  res.json({ sucesso: true, mensagem: "Agendamento criado com sucesso." });
 });
+
 
