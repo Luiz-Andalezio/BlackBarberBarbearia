@@ -84,7 +84,7 @@ body {
     background: #2C2C2C;
     padding: 20px;
     border-radius: 10px;
-    width: 400px;
+    width: 560px;
     position: relative;
     text-align: center;
 }
@@ -101,31 +101,49 @@ body {
 .professional-container,
 .time-container {
     margin-top: 20px;
+    font-size: 1.5em;
 }
 
 .date-container button,
-.professional-container button,
 .time-container button {
+    width: 70px;
+    height: 70px;
     background-color: #1D1D1D;
     color: white;
-    border: 1px solid #00BFFF;
     padding: 10px;
     margin: 5px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-size: 18px;
+}
+
+
+.professional-container button {
+    width: 120px;
+    height: 70px;
+    background-color: #1D1D1D;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 18px;
 }
 
 .date-container button:hover,
 .professional-container button:hover,
 .time-container button:hover {
-    background-color: #00BFFF;
+    background-color: #28A745;
     color: #1D1D1D;
+    font-weight: bold;
 }
 
 .selected {
-    background-color: #00BFFF !important;
+    background-color: #19e449 !important;
     color: #1D1D1D !important;
+    font-weight: bold;
 }
 
 .separator {
@@ -143,9 +161,15 @@ body {
     border-radius: 5px;
     font-size: 16px;
     cursor: not-allowed;
+    font-size: 1.5em;
 }
 
 .confirm-button.active {
+    background-color: #218838;
+    cursor: pointer;
+}
+
+.confirm-button.active:hover {
     background-color: #28A745;
     cursor: pointer;
 }
