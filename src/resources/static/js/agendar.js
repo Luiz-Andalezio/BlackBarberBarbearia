@@ -46,7 +46,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         modalAgendamento.style.display = "flex";
                         resetarSelecoes();
                         await carregarAgendamentos();
-                        carregarBarbeiros();
+                        await fetch("http://localhost:3000/api/barbeiros")
+                            .then(res => res.json())
+                            .then(barbeiros => {
+                                window.listaBarbeiros = [...new Set(barbeiros.map(b => b.nome))];
+                            });
                         gerarCalendario(dataBase);
                     }
                 });
@@ -107,13 +111,24 @@ document.addEventListener("DOMContentLoaded", function () {
         fetch("http://localhost:3000/api/barbeiros")
             .then(res => res.json())
             .then(barbeiros => {
+                window.listaBarbeiros = [...new Set(barbeiros.map(b => b.nome))];
                 const container = document.getElementById("barbeiros-container");
                 container.innerHTML = "";
-
                 barbeiros.forEach(barbeiro => {
+                    let indisponivel = false;
+                    if (dataSelecionada) {
+                        const horariosDoDia = gerarHorarios();
+                        const ocupados = agendamentosExistentes.filter(
+                            a => a.data === dataSelecionada && a.barbeiro === barbeiro.nome
+                        );
+                        indisponivel = ocupados.length >= horariosDoDia.length;
+                    }
                     const btn = document.createElement("button");
                     btn.innerText = barbeiro.nome;
+                    btn.disabled = indisponivel;
+                    if (indisponivel) btn.style.opacity = "0.5";
                     btn.onclick = () => {
+                        if (btn.disabled) return;
                         document.querySelectorAll("#barbeiros-container button").forEach(b => b.classList.remove("selected"));
                         btn.classList.add("selected");
                         barbeiroSelecionado = barbeiro.nome;
@@ -167,23 +182,33 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let i = 0; i < 7; i++) {
             const data = new Date(baseDate);
             data.setDate(baseDate.getDate() + i);
-
             const dataStr = data.toISOString().split('T')[0];
+
+            let todosIndisponiveis = false;
+            let barbeiros = window.listaBarbeiros || [];
+            if (barbeiros.length > 0) {
+                todosIndisponiveis = barbeiros.every(barbeiro => {
+                    const horariosDoDia = gerarHorarios();
+                    const ocupados = agendamentosExistentes.filter(
+                        a => a.data === dataStr && a.barbeiro === barbeiro
+                    );
+                    return ocupados.length >= horariosDoDia.length;
+                });
+            }
 
             const botao = document.createElement("button");
             botao.innerText = `${data.getDate()}/${data.getMonth() + 1}`;
-            botao.disabled = diaIndisponivel(dataStr);
+            botao.disabled = todosIndisponiveis;
             if (botao.disabled) botao.style.opacity = "0.5";
-
             botao.onclick = () => {
                 if (botao.disabled) return;
                 document.querySelectorAll("#calendar-carousel button").forEach(b => b.classList.remove("selected"));
                 botao.classList.add("selected");
                 dataSelecionada = dataStr;
+                carregarBarbeiros();
                 carregarHorarios();
                 verificarHabilitarConfirmar();
             };
-
             container.appendChild(botao);
         }
     }
