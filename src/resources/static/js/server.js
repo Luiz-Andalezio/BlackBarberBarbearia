@@ -1,5 +1,3 @@
-// ===== ROTAS DE LOGIN E CADASTRO =====
-
 const express = require("express");
 const sqlite3 = require("sqlite3").verbose();
 const cors = require("cors");
@@ -14,11 +12,14 @@ const SALT_ROUNDS = 10;
 app.use(cors());
 app.use(express.json());
 
-const dbPath = path.join(__dirname, "../../database/bbb.db");
+// Rota do banco de dados
+const dbPath = path.join(__dirname, "../../data/db/bbb.db");
 const db = new sqlite3.Database(dbPath, (err) => {
   if (err) console.error("Erro ao abrir banco:", err.message);
   else console.log("Conectado ao banco SQLite.");
 });
+
+// ===== ROTAS DE LOGIN E CADASTRO =====
 
 // Rota de login
 app.post("/login", (req, res) => {
@@ -90,10 +91,6 @@ app.post("/register", (req, res) => {
       return res.status(500).json({ sucesso: false, mensagem: "Erro ao processar a senha." });
     }
   });
-});
-
-app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
 
 // ===== ROTAS DE INFORMAÇÕES DA HOME =====
@@ -243,4 +240,35 @@ app.post("/api/agendamentos", (req, res) => {
   res.json({ sucesso: true, mensagem: "Agendamento criado com sucesso." });
 });
 
+// ===== ROTAS DE ARQUIVOS ESTÁTICOS E BUILD =====
 
+app.use('/static', express.static(path.join(__dirname, '../../static')));
+
+// Rotas HTML principais
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../templates/user/index.html'));
+});
+
+app.get('/login.html', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../templates/login.html'));
+});
+
+app.get('/agendar', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../templates/user/agendar.html'));
+});
+
+app.get('/conta', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../templates/user/contaUsuario.html'));
+});
+
+app.get('/user/:file', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../templates/user', req.params.file));
+});
+
+app.get('/admin/:file', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../templates/admin', req.params.file));
+});
+
+app.listen(PORT, () => {
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
+});
