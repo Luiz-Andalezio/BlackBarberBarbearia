@@ -1,22 +1,12 @@
-interface InfoData {
-  localizacao: string;
-  mapa: string;
-  horario: string;
-  pagamento: string;
-  comodidades: string;
-  profissionais: string;
-  contatos: string;
-}
+document.addEventListener("DOMContentLoaded", function () {
+    const infoText = document.getElementById("infoText");
+    const mapContainer = document.getElementById("mapContainer");
 
-document.addEventListener("DOMContentLoaded", () => {
-  const infoText = document.getElementById("infoText") as HTMLElement | null;
-  const mapContainer = document.getElementById("mapContainer") as HTMLElement | null;
-
-  fetch("http://localhost:3000/api/info")
-    .then((res) => res.json())
-    .then((info: InfoData) => {
-      if (infoText) {
-        infoText.innerHTML = `
+    fetch("http://localhost:3000/api/info")
+        .then(res => res.json())
+        .then(info => {
+            if (infoText) {
+                infoText.innerHTML = `
           <p><strong class="freeman">Localização:</strong> <span class="tnr">${info.localizacao}</span></p>
           <p><strong class="freeman">Dias de Atendimento e Horário:</strong> <span class="tnr">${info.horario}</span></p>
           <p><strong class="freeman">Formas de Pagamento:</strong> <span class="tnr">${info.pagamento}</span></p>
@@ -24,26 +14,26 @@ document.addEventListener("DOMContentLoaded", () => {
           <p><strong class="freeman">Profissionais:</strong> <span class="tnr">${info.profissionais}</span></p>
           <p><strong class="freeman">Contatos:</strong> <span class="tnr">${info.contatos}</span></p>
         `;
-      }
+            }
 
-      if (mapContainer && info.mapa) {
-        mapContainer.innerHTML = `
+            if (mapContainer && info.mapa) {
+                mapContainer.innerHTML = `
           <iframe 
             src="${info.mapa}"
             width="300" 
             height="450" 
             style="border:0;" 
-            allowfullscreen 
+            allowfullscreen="" 
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         `;
-      }
-    })
-    .catch((err) => {
-      console.error("Erro ao carregar informações:", err);
-      if (infoText) {
-        infoText.innerHTML = "<p class='erro'>Erro ao carregar informações da barbearia.</p>";
-      }
-    });
+            }
+        })
+        .catch(err => {
+            console.error("Erro ao carregar informações:", err);
+            if (infoText) {
+                infoText.innerHTML = "<p class='erro'>Erro ao carregar informações da barbearia.</p>";
+            }
+        });
 });

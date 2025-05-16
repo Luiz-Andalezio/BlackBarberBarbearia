@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Black Barber Barbearia</title>
-    <link rel="icon" href="../../../static/img/logoWhite.png" type="image/x-icon">
-    <link rel="stylesheet" href="../../css/index.css">
-    <link rel="stylesheet" href="../../css/tabelaAgendar.css">
+    <link rel="icon" href="../../static/img/logoWhite.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../static/css/index.css">
+    <link rel="stylesheet" href="../../static/css/tabelaAgendar.css">
     <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
 </head>
 
@@ -15,7 +15,7 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="navbar-left">
-            <img src="../../../static/img/logo.webp" alt="Logo Black Barber" class="logo">
+            <img src="../../static/img/logo.webp" alt="Logo Black Barber" class="logo">
             <a href="index.html" class="tab" id="navbarBtn">Boas-vindas</a>
             <a href="agendar.html" class="tab active" id="navbarBtn">Agendar</a>
         </div>
@@ -60,6 +60,7 @@
             <div class="separator"></div>
 
             <h2>Escolha o Horário</h2>
+            <h5>OBS: Os horários só aparecem após a data e o barbeiro serem selecionados.</h5>
             <div class="time-container" id="horarios-container">
                 <!-- Botões de horários -->
             </div>
@@ -68,8 +69,8 @@
         </div>
     </div>
 
-    <script src="../../js/agendar.js" defer></script>
-    <script src="../../dist/session.js" defer></script>
+    <script src="../../static/js/agendar.js" defer></script>
+    <script src="../../static/js/session.js" defer></script>
 </body>
 
 </html>
