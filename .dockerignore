@@ -1,0 +1,58 @@
+# Pastas desnecessárias
+node_modules
+coverage
+dist
+logs
+.rascunhos
+sql.js-1.13.0
+
+# Arquivos temporários ou de sistema
+*.log
+*.swp
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+*.pid
+*.seed
+*.pid.lock
+
+# Cache, builds, relatórios
+.nyc_output
+.grunt
+bower_components
+lib-cov
+build/Release
+jspm_packages
+web_modules
+*.tsbuildinfo
+.npm
+.eslintcache
+.stylelintcache
+.rpt2_cache/
+.rts2_cache_*/
+.node_repl_history
+*.tgz
+.yarn-integrity
+
+# Env
+.env
+.env.*
+
+# Caches e saídas de bundlers
+.cache
+.parcel-cache
+.next
+.nuxt
+.vuepress/dist
+.temp
+.docusaurus
+.serverless
+.fusebox
+.dynamodb
+.tern-port
+.vscode-test
+.yarn/
+.pnp.*

@@ -1,4 +1,3 @@
-//Login e Cadastro
 const express = require("express");
 const sqlite3 = require("sqlite3").verbose();
 const cors = require("cors");
@@ -13,16 +12,18 @@ const SALT_ROUNDS = 10;
 app.use(cors());
 app.use(express.json());
 
-const dbPath = path.join(__dirname, "../../database/bbb.db");
+// Rota do banco de dados
+const dbPath = path.join(__dirname, "../../data/db/bbb.db");
 const db = new sqlite3.Database(dbPath, (err) => {
   if (err) console.error("Erro ao abrir banco:", err.message);
   else console.log("Conectado ao banco SQLite.");
 });
 
+// ===== ROTAS DE LOGIN E CADASTRO =====
+
 // Rota de login
 app.post("/login", (req, res) => {
   const { email, senha, tipo } = req.body;
-  console.log("Recebido no login:", req.body);
 
   if (!email || !senha || !tipo) {
     console.log("Tentativa de login com campos obrigatórios não preenchidos.");
@@ -92,11 +93,8 @@ app.post("/register", (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
-});
+// ===== ROTAS DE INFORMAÇÕES DA HOME =====
 
-//Infos
 const fs = require("fs");
 
 const infoPath = path.join(__dirname, "../../data/info.json");
@@ -132,4 +130,145 @@ app.post("/api/info", (req, res) => {
     console.log("info.json atualizado com sucesso.");
     res.sendStatus(200);
   });
+});
+
+// ===== ROTAS DE SERVIÇOS =====
+
+// Caminhos dos arquivos
+const servicosPath = path.join(__dirname, "../../data/servicos.json");
+const agendamentosPath = path.join(__dirname, "../../data/agendamentos.json");
+
+// Buscar serviços
+app.get("/api/servicos", (req, res) => {
+  fs.readFile(servicosPath, "utf8", (err, data) => {
+    if (err) {
+      console.error("Erro ao ler serviços:", err.message);
+      return res.status(500).json({ sucesso: false, mensagem: "Erro ao ler serviços." });
+    }
+    res.json(JSON.parse(data));
+  });
+});
+
+// Criar novo serviço
+app.post("/api/servicos", (req, res) => {
+  const { nome, preco, duracao } = req.body;
+  if (!nome || !preco || !duracao) {
+    return res.status(400).json({ sucesso: false, mensagem: "Campos obrigatórios." });
+  }
+
+  let servicos = [];
+  if (fs.existsSync(servicosPath)) {
+    servicos = JSON.parse(fs.readFileSync(servicosPath, "utf8"));
+  }
+
+  const novoServico = { id: Date.now(), nome, preco, duracao };
+  servicos.push(novoServico);
+
+  fs.writeFileSync(servicosPath, JSON.stringify(servicos, null, 2));
+  res.json({ sucesso: true, mensagem: "Serviço criado." });
+});
+
+// Atualizar serviços
+app.put("/api/servicos", (req, res) => {
+  const { servicos } = req.body;
+  if (!Array.isArray(servicos)) {
+    return res.status(400).json({ sucesso: false, mensagem: "Formato inválido de serviços." });
+  }
+
+  fs.writeFileSync(servicosPath, JSON.stringify(servicos, null, 2));
+  res.json({ sucesso: true, mensagem: "Serviços atualizados." });
+});
+
+// ===== ROTAS DE AGENDAMENTOS =====
+
+// Buscar barbeiros (usuários que possuem o tipo = "barbeiro")
+app.get("/api/barbeiros", (req, res) => {
+  const query = `SELECT id, nome FROM usuarios WHERE tipo = 'barbeiro'`;
+
+  db.all(query, [], (err, rows) => {
+      if (err) {
+          console.error("Erro ao buscar barbeiros:", err.message);
+          return res.status(500).json({ sucesso: false, mensagem: "Erro ao buscar barbeiros." });
+      }
+      res.json(rows);
+  });
+});
+
+// Buscar todos os agendamentos
+app.get("/api/agendamentos", (req, res) => {
+  fs.readFile(agendamentosPath, "utf8", (err, data) => {
+    if (err) {
+      console.error("Erro ao ler agendamentos:", err.message);
+      return res.status(500).json({ sucesso: false, mensagem: "Erro ao ler agendamentos." });
+    }
+
+    try {
+      const agendamentos = JSON.parse(data);
+      res.json(agendamentos);
+    } catch (e) {
+      console.error("Erro ao parsear agendamentos:", e.message);
+      res.status(500).json({ sucesso: false, mensagem: "Erro no formato de agendamentos." });
+    }
+  });
+});
+
+// Agendar serviço
+app.post("/api/agendamentos", (req, res) => {
+  const { usuario, servico, barbeiro, data, horario } = req.body;
+
+  if (!usuario || !servico || !barbeiro || !data || !horario) {
+      return res.status(400).json({ sucesso: false, mensagem: "Todos os campos são obrigatórios." });
+  }
+
+  let agendamentos = [];
+  if (fs.existsSync(agendamentosPath)) {
+      agendamentos = JSON.parse(fs.readFileSync(agendamentosPath, "utf8"));
+  }
+
+  const novoAgendamento = {
+      id: Date.now(),
+      usuario,
+      servico,
+      barbeiro,
+      data,     //formato: 2025-05-08
+      horario   //formato: 08:00
+  };
+
+  agendamentos.push(novoAgendamento);
+
+  fs.writeFileSync(agendamentosPath, JSON.stringify(agendamentos, null, 2));
+  res.json({ sucesso: true, mensagem: "Agendamento criado com sucesso." });
+});
+
+// ===== ROTAS DE ARQUIVOS ESTÁTICOS E BUILD =====
+
+app.use('/static', express.static(path.join(__dirname, '../../static')));
+
+// Rotas HTML principais
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../templates/user/index.html'));
+});
+
+app.get('/login.html', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../templates/login.html'));
+});
+
+app.get('/agendar', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../templates/user/agendar.html'));
+});
+
+app.get('/conta', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../templates/user/contaUsuario.html'));
+});
+
+app.get('/user/:file', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../templates/user', req.params.file));
+});
+
+app.get('/admin/:file', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../templates/admin', req.params.file));
+});
+
+app.listen(PORT, () => {
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
