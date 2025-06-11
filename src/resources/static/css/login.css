@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background: url('/static/img/vintage-barber.png') no-repeat center center fixed;
+    background: url('../img/vintage-barber.png') no-repeat center center fixed;
     background-size: cover;
     color: #fff;
 }
@@ -67,4 +67,20 @@ button:hover {
     right: 10px;
     font-size: 0.8em;
     color: #ccc;
+}
+
+#role {
+    font-size: 1.5em;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#email,
+#senha,
+#nome,
+#telefone,
+#emailRegister,
+#senhaRegister,
+#confirmarSenha {
+    width: 98.9%;
 }

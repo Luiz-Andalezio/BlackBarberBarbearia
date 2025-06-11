@@ -1,0 +1,62 @@
+#title {
+    font-family: 'Freeman', sans-serif;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.info-form-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #424242;
+    border-radius: 50px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.info-form-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#infoForm label {
+    font-family: 'Freeman', sans-serif;
+    margin-left: -12px;
+    font-size: 1.5rem;
+}
+
+#infoForm input {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-left: -12px;
+    background-color: #656565;
+    border: 1px solid #ccc;
+    color: white;
+}
+
+#salvarBtn {
+    font-size: large;
+    font-weight: bold;
+    background-color: #9C9C9C;
+    color: white;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: black;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto 0;
+}
+
+#salvarBtn:disabled {
+    font-size: large;
+    font-weight: bold;
+    background-color: #555555;
+    color:#656565;
+    border:black;
+    cursor: not-allowed;
+}
