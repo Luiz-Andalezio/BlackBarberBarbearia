@@ -1,0 +1,109 @@
+#title {
+    font-family: 'Freeman', sans-serif;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.container-agenda {
+    max-width: 1100px;
+    margin: 40px auto;
+    background: #232323;
+    border-radius: 8px;
+    padding: 30px 30px 10px 30px;
+    box-shadow: 0 2px 8px #00000033;
+}
+
+.agenda-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #2A2A2A;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.agenda-table th, .agenda-table td {
+    padding: 14px 10px;
+    text-align: left;
+}
+
+.agenda-table th {
+    background: #181818;
+    color: #fff;
+    font-size: 1.1rem;
+    font-family: 'Freeman', sans-serif;
+}
+
+.agenda-table tr {
+    border-bottom: 1px solid #444;
+}
+
+.agenda-table tr:last-child {
+    border-bottom: none;
+}
+
+.agenda-table td {
+    color: #fff;
+    font-size: 1rem;
+}
+
+.price {
+    color: #FFD700;
+}
+.time {
+    color: #1E90FF;
+}
+
+.status-dropdown {
+    position: relative;
+    display: inline-block;
+    width: 160px;
+}
+
+.status-btn {
+    width: 100%;
+    padding: 7px 10px;
+    border: none;
+    border-radius: 5px;
+    background: #6C757D;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.status-btn.status-efetuado { background: #28A745; }
+.status-btn.status-cancelado { background: #DC3545; }
+.status-btn.status-agendado { background: #6C757D; }
+
+.status-options {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 110%;
+    background: #181818;
+    border-radius: 5px;
+    min-width: 100%;
+    z-index: 10;
+    box-shadow: 0 2px 8px #00000033;
+}
+
+.status-options .option {
+    padding: 8px 12px;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+}
+
+.status-options .option:hover {
+    background: #444;
+}
+
+.status-dropdown.open .status-options {
+    display: block;
+}
