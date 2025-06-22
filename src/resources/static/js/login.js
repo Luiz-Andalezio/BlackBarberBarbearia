@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loginFields.style.display = "block";
     registerFields.style.display = "none";
 
+    // Logar com usuário
     document.getElementById("btnLogin").addEventListener("click", async () => {
         const email = document.getElementById("email").value.trim();
         const senha = document.getElementById("senha").value.trim();
@@ -39,21 +40,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (data.sucesso) {
             const usuario = {
+                nome: data.nome,
                 email: email,
                 tipo: tipo
             };
             sessionStorage.setItem("usuarioLogado", JSON.stringify(usuario));
             sessionStorage.setItem("tipo", tipo);
             if (tipo === "cliente") {
-                window.location.href = "../templates/user/index.html";
+                window.location.href = "/user/index.html";
             } else {
-                window.location.href = "../templates/admin/agenda.html";
+                window.location.href = "/admin/agenda.html";
             }
         } else {
             alert(data.mensagem || "Credenciais inválidas!");
         }
     });
 
+    // Registrar novo usuário
     document.getElementById("btnRegister").addEventListener("click", async () => {
         const nome = document.getElementById("nome").value.trim();
         const telefone = document.getElementById("telefone").value.trim();
@@ -79,11 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
         alert(data.mensagem);
 
         if (data.sucesso) {
-            if (tipo === "cliente") {
-                window.location.href = "../templates/user/index.html";
-            } else {
-                window.location.href = "../templates/admin/agenda.html";
-            }
+            window.location.href = "/user/index.html";
         }
     });
 });
