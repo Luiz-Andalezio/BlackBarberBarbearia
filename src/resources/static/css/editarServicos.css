@@ -71,8 +71,10 @@ hr {
 }
 
 .form-group label {
+    font-family: 'Freeman', sans-serif;
     display: block;
-    font-size: 14px;
+    font-size: 18px;
+    margin-left: 2px;
     margin-bottom: 5px;
 }
 
