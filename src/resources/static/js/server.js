@@ -45,7 +45,7 @@ app.post("/login", (req, res) => {
     const senhaCorreta = await bcrypt.compare(senha, row.senha);
     if (senhaCorreta) {
       console.log(`Login bem-sucedido para o usuário de nome ${row.nome} e email ${email}`);
-      return res.json({ sucesso: true, nome: row.nome, tipo: row.tipo, email: row.email });
+      return res.json({ sucesso: true, id: row.id, nome: row.nome, tipo: row.tipo, email: row.email });
     } else {
       console.log(`Senha incorreta para o usuáriode nome ${row.nome} e email ${email}`);
       return res.json({ sucesso: false, mensagem: "Usuário não encontrado ou dados incorretos." });
@@ -84,7 +84,7 @@ app.post("/register", (req, res) => {
         }
 
         console.log(`Cadastro realizado com sucesso para o usuário: ${email}`);
-        return res.json({ sucesso: true, mensagem: "Cadastro realizado com sucesso!" });
+        return res.json({ sucesso: true, mensagem: "Cadastro realizado com sucesso!", id: this.lastID });
       });
     } catch (hashError) {
       console.error("Erro ao criptografar senha:", hashError.message);
@@ -219,12 +219,14 @@ app.post("/api/agendamentos", (req, res) => {
   if (!usuario || !servico || !barbeiro || !data || !horario) {
     return res.status(400).json({ sucesso: false, mensagem: "Todos os campos são obrigatórios." });
   }
-
+  
+  let idCliente = 0;
   let nomeCliente = "";
   let precoServico = 0;
   try {
     const usuarioObj = JSON.parse(usuario);
-    nomeCliente = usuarioObj.nome || usuarioObj.email || "";
+    idCliente = usuarioObj.id;
+    nomeCliente = usuarioObj.nome;
   } catch {
     nomeCliente = usuario;
   }
@@ -242,14 +244,16 @@ app.post("/api/agendamentos", (req, res) => {
   }
 
   const novoAgendamento = {
-    id: Date.now(),
-    cliente: nomeCliente,
+    idAgendamento: Date.now(),
+    idCliente: idCliente,
+    nomeCliente: nomeCliente,
     servico,
     preco: precoServico,
     barbeiro,
     data,
     horario,
-    estado: "Agendado"
+    estado: "Agendado",
+    canceladoCliente: false
   };
 
   agendamentos.push(novoAgendamento);
@@ -267,7 +271,7 @@ app.put("/api/agendamentos/:id/estado", (req, res) => {
     agendamentos = JSON.parse(fs.readFileSync(agendamentosPath, "utf8"));
   }
 
-  const index = agendamentos.findIndex(a => String(a.id) === String(id));
+  const index = agendamentos.findIndex(a => String(a.idAgendamento) === String(id));
   if (index === -1) {
     return res.status(404).json({ erro: "Agendamento não encontrado" });
   }
@@ -275,6 +279,22 @@ app.put("/api/agendamentos/:id/estado", (req, res) => {
   agendamentos[index].estado = estado;
   fs.writeFileSync(agendamentosPath, JSON.stringify(agendamentos, null, 2));
   res.json({ sucesso: true, mensagem: "Estado atualizado com sucesso." });
+});
+
+app.put("/api/agendamentos/:id/cancelar-cliente", (req, res) => {
+  const { id } = req.params;
+  let agendamentos = [];
+  if (fs.existsSync(agendamentosPath)) {
+    agendamentos = JSON.parse(fs.readFileSync(agendamentosPath, "utf8"));
+  }
+  const index = agendamentos.findIndex(a => String(a.idAgendamento) === String(id));
+  if (index === -1) {
+    return res.status(404).json({ erro: "Agendamento não encontrado" });
+  }
+  agendamentos[index].canceladoCliente = true;
+  agendamentos[index].estado = "Cancelado pelo cliente";
+  fs.writeFileSync(agendamentosPath, JSON.stringify(agendamentos, null, 2));
+  res.json({ sucesso: true, mensagem: "Agendamento cancelado pelo cliente." });
 });
 
 // ===== ROTAS DE ARQUIVOS ESTÁTICOS E BUILD =====

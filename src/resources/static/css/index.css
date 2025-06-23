@@ -95,7 +95,7 @@ body {
     border-radius: 50%;
     width: 54px;
     height: 54px;
-    line-height: 54px;
+    line-height: 40px;
     text-align: center;
     cursor: pointer;
     z-index: 2;
@@ -103,16 +103,32 @@ body {
 }
 
 .carousel-arrow.left {
-    left: 18px;
+    left: 100px;
 }
 .carousel-arrow.right {
-    right: 18px;
+    right: 100px;
 }
 .carousel-arrow:hover {
     color: #ffffff;
 }
 .carousel {
     position: relative;
+}
+
+#barbearia_cont {
+    width: 1500px;
+    height: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+#barbearia_cont img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    object-position: center;
 }
 
 .slides {

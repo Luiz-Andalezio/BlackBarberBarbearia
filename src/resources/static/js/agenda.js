@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (status === "Agendado") return "status-agendado";
         if (status === "Efetuado e Pago") return "status-efetuado";
         if (status === "Cancelado") return "status-cancelado";
+        if (status === "Cancelado pelo cliente") return "status-cancelado-cliente";
         return "status-agendado";
     }
 
@@ -44,9 +45,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     // Render programados
     programados.forEach(ag => {
         const tr = document.createElement("tr");
-        tr.setAttribute('data-id', ag.id);
+        tr.setAttribute('data-id', ag.idAgendamento);
+        const canceladoPeloCliente = ag.estado === "Cancelado pelo cliente";
         tr.innerHTML = `
-            <td>${ag.cliente}</td>
+            <td>${ag.nomeCliente}</td>
             <td>
                 <div>${ag.servico}</div>
                 <div class="price">R$ ${ag.preco}</div>
@@ -55,8 +57,8 @@ document.addEventListener("DOMContentLoaded", async function () {
             <td>${ag.barbeiro}</td>
             <td>${formatarDataHora(ag.data, ag.horario)}</td>
             <td>
-                <div class="status-dropdown">
-                    <button class="status-btn ${statusClass(ag.estado)}">${ag.estado}</button>
+                <div class="status-dropdown${canceladoPeloCliente ? ' disabled' : ''}">
+                    <button class="status-btn ${statusClass(ag.estado)}" ${canceladoPeloCliente ? 'disabled' : ''}>${ag.estado}</button>
                     <div class="status-options">
                         <button class="option status-agendado" data-status="Agendado">Agendado</button>
                         <button class="option status-efetuado" data-status="Efetuado e Pago">Efetuado e Pago</button>
@@ -71,10 +73,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     // Render excedidos
     excedidos.forEach(ag => {
         const tr = document.createElement("tr");
-        tr.setAttribute('data-id', ag.id);
+        tr.setAttribute('data-id', ag.idAgendamento);
         tr.classList.add("agendamento-vencido");
         tr.innerHTML = `
-            <td>${ag.cliente}</td>
+            <td>${ag.nomeCliente}</td>
             <td>
                 <div>${ag.servico}</div>
                 <div class="price">R$ ${ag.preco}</div>
@@ -86,8 +88,8 @@ document.addEventListener("DOMContentLoaded", async function () {
                 <span class="excedida">(data excedida)</span>
             </td>
             <td>
-                <div class="status-dropdown">
-                    <button class="status-btn ${statusClass(ag.estado)}">${ag.estado}</button>
+                <div class="status-dropdown${ag.estado === "Cancelado pelo cliente" ? ' disabled' : ''}">
+                    <button class="status-btn ${statusClass(ag.estado)}" ${ag.estado === "Cancelado pelo cliente" ? 'disabled' : ''}>${ag.estado}</button>
                     <div class="status-options">
                         <button class="option status-agendado" data-status="Agendado">Agendado</button>
                         <button class="option status-efetuado" data-status="Efetuado e Pago">Efetuado e Pago</button>
@@ -105,6 +107,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             const btn = e.target.closest('.status-btn');
             const option = e.target.closest('.option');
             const dropdown = e.target.closest('.status-dropdown');
+            if (dropdown && dropdown.classList.contains('disabled')) return;
             if (btn && dropdown) {
                 document.querySelectorAll('.status-dropdown').forEach(d => {
                     if (d !== dropdown) d.classList.remove('open');

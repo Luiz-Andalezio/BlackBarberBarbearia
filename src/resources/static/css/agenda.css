@@ -20,7 +20,6 @@
     border-collapse: collapse;
     background: #2A2A2A;
     border-radius: 8px;
-    overflow: hidden;
     margin-bottom: 15px;
 }
 
@@ -30,7 +29,7 @@
 }
 
 .agenda-table th {
-    background: #181818;
+    background: #0f0f0f;
     color: #fff;
     font-size: 1.1rem;
     font-family: 'Freeman', sans-serif;
@@ -74,9 +73,10 @@
     text-align: left;
 }
 
-.status-btn.status-efetuado { background: #28A745; }
-.status-btn.status-cancelado { background: #DC3545; }
-.status-btn.status-agendado { background: #6C757D; }
+.status-btn.status-agendado { font-weight: bold; background: #6C757D; }
+.status-btn.status-efetuado { font-weight: bold; background: #28A745; }
+.status-btn.status-cancelado { font-weight: bold; background: #DC3545; }
+.status-btn.status-cancelado-cliente { font-weight: bold; background: #ff8000; }
 
 .status-options {
     display: none;
@@ -86,7 +86,7 @@
     background: #181818;
     border-radius: 5px;
     min-width: 100%;
-    z-index: 10;
+    z-index: 9999;
     box-shadow: 0 2px 8px #00000033;
 }
 
