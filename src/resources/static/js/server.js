@@ -44,10 +44,10 @@ app.post("/login", (req, res) => {
 
     const senhaCorreta = await bcrypt.compare(senha, row.senha);
     if (senhaCorreta) {
-      console.log(`Login bem-sucedido para o usuário: ${email}`);
-      return res.json({ sucesso: true });
+      console.log(`Login bem-sucedido para o usuário de nome ${row.nome} e email ${email}`);
+      return res.json({ sucesso: true, nome: row.nome, tipo: row.tipo, email: row.email });
     } else {
-      console.log(`Senha incorreta para o usuário: ${email}`);
+      console.log(`Senha incorreta para o usuáriode nome ${row.nome} e email ${email}`);
       return res.json({ sucesso: false, mensagem: "Usuário não encontrado ou dados incorretos." });
     }
   });
@@ -186,11 +186,11 @@ app.get("/api/barbeiros", (req, res) => {
   const query = `SELECT id, nome FROM usuarios WHERE tipo = 'barbeiro'`;
 
   db.all(query, [], (err, rows) => {
-      if (err) {
-          console.error("Erro ao buscar barbeiros:", err.message);
-          return res.status(500).json({ sucesso: false, mensagem: "Erro ao buscar barbeiros." });
-      }
-      res.json(rows);
+    if (err) {
+      console.error("Erro ao buscar barbeiros:", err.message);
+      return res.status(500).json({ sucesso: false, mensagem: "Erro ao buscar barbeiros." });
+    }
+    res.json(rows);
   });
 });
 
@@ -217,27 +217,64 @@ app.post("/api/agendamentos", (req, res) => {
   const { usuario, servico, barbeiro, data, horario } = req.body;
 
   if (!usuario || !servico || !barbeiro || !data || !horario) {
-      return res.status(400).json({ sucesso: false, mensagem: "Todos os campos são obrigatórios." });
+    return res.status(400).json({ sucesso: false, mensagem: "Todos os campos são obrigatórios." });
   }
+
+  let nomeCliente = "";
+  let precoServico = 0;
+  try {
+    const usuarioObj = JSON.parse(usuario);
+    nomeCliente = usuarioObj.nome || usuarioObj.email || "";
+  } catch {
+    nomeCliente = usuario;
+  }
+
+  let servicos = [];
+  if (fs.existsSync(servicosPath)) {
+    servicos = JSON.parse(fs.readFileSync(servicosPath, "utf8"));
+  }
+  const servicoObj = servicos.find(s => s.nome === servico);
+  if (servicoObj) precoServico = servicoObj.preco;
 
   let agendamentos = [];
   if (fs.existsSync(agendamentosPath)) {
-      agendamentos = JSON.parse(fs.readFileSync(agendamentosPath, "utf8"));
+    agendamentos = JSON.parse(fs.readFileSync(agendamentosPath, "utf8"));
   }
 
   const novoAgendamento = {
-      id: Date.now(),
-      usuario,
-      servico,
-      barbeiro,
-      data,     //formato: 2025-05-08
-      horario   //formato: 08:00
+    id: Date.now(),
+    cliente: nomeCliente,
+    servico,
+    preco: precoServico,
+    barbeiro,
+    data,
+    horario,
+    estado: "Agendado"
   };
 
   agendamentos.push(novoAgendamento);
 
   fs.writeFileSync(agendamentosPath, JSON.stringify(agendamentos, null, 2));
   res.json({ sucesso: true, mensagem: "Agendamento criado com sucesso." });
+});
+
+app.put("/api/agendamentos/:id/estado", (req, res) => {
+  const { id } = req.params;
+  const { estado } = req.body;
+
+  let agendamentos = [];
+  if (fs.existsSync(agendamentosPath)) {
+    agendamentos = JSON.parse(fs.readFileSync(agendamentosPath, "utf8"));
+  }
+
+  const index = agendamentos.findIndex(a => String(a.id) === String(id));
+  if (index === -1) {
+    return res.status(404).json({ erro: "Agendamento não encontrado" });
+  }
+
+  agendamentos[index].estado = estado;
+  fs.writeFileSync(agendamentosPath, JSON.stringify(agendamentos, null, 2));
+  res.json({ sucesso: true, mensagem: "Estado atualizado com sucesso." });
 });
 
 // ===== ROTAS DE ARQUIVOS ESTÁTICOS E BUILD =====

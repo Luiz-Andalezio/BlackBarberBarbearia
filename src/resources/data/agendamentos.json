@@ -1,349 +1,497 @@
 [
   {
     "id": 1747244778964,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "João da Silva",
+    "usuario": "{\"email\":\"joao1@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-06-01",
-    "horario": "08:00"
+    "data": "2025-06-28",
+    "horario": "08:00",
+    "estado": "Agendado"
   },
   {
     "id": 1747244815979,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Maria Oliveira",
+    "usuario": "{\"email\":\"maria2@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-06-01",
-    "horario": "08:30"
+    "data": "2025-06-28",
+    "horario": "08:30",
+    "estado": "Agendado"
   },
   {
     "id": 1747244820441,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Carlos Souza",
+    "usuario": "{\"email\":\"carlos3@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-06-01",
-    "horario": "09:00"
+    "data": "2025-06-28",
+    "horario": "09:00",
+    "estado": "Agendado"
   },
   {
     "id": 1747244825140,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Ana Paula",
+    "usuario": "{\"email\":\"ana4@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-06-01",
-    "horario": "09:30"
+    "data": "2025-06-28",
+    "horario": "09:30",
+    "estado": "Agendado"
   },
   {
     "id": 1747244835331,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Pedro Lima",
+    "usuario": "{\"email\":\"pedro5@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-06-01",
-    "horario": "10:00"
+    "data": "2025-06-28",
+    "horario": "10:00",
+    "estado": "Agendado"
   },
   {
     "id": 1747244839677,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Juliana Alves",
+    "usuario": "{\"email\":\"juliana6@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-06-01",
-    "horario": "10:30"
+    "data": "2025-06-28",
+    "horario": "10:30",
+    "estado": "Agendado"
   },
   {
     "id": 1747244844941,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Lucas Pereira",
+    "usuario": "{\"email\":\"lucas7@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-06-01",
-    "horario": "11:00"
+    "data": "2025-06-28",
+    "horario": "11:00",
+    "estado": "Agendado"
   },
   {
     "id": 1747244850420,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Fernanda Costa",
+    "usuario": "{\"email\":\"fernanda8@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-06-01",
-    "horario": "11:30"
+    "data": "2025-06-28",
+    "horario": "11:30",
+    "estado": "Agendado"
   },
   {
     "id": 1747244854665,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Rafael Gomes",
+    "usuario": "{\"email\":\"rafael9@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-06-01",
-    "horario": "12:00"
+    "data": "2025-06-28",
+    "horario": "12:00",
+    "estado": "Agendado"
   },
   {
     "id": 1747244859891,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Patricia Dias",
+    "usuario": "{\"email\":\"patricia10@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-06-01",
-    "horario": "12:30"
+    "data": "2025-06-28",
+    "horario": "12:30",
+    "estado": "Agendado"
   },
   {
     "id": 1747244865724,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Bruno Martins",
+    "usuario": "{\"email\":\"bruno11@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-06-01",
-    "horario": "13:00"
+    "data": "2025-06-28",
+    "horario": "13:00",
+    "estado": "Agendado"
   },
   {
     "id": 1747244870454,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Camila Rocha",
+    "usuario": "{\"email\":\"camila12@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Barba",
+    "preco": 20,
     "barbeiro": "Fulano",
-    "data": "2025-06-01",
-    "horario": "13:30"
+    "data": "2025-06-28",
+    "horario": "13:30",
+    "estado": "Agendado"
   },
   {
     "id": 1747244875034,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Eduardo Nunes",
+    "usuario": "{\"email\":\"eduardo13@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Sobrancelha",
+    "preco": 10,
     "barbeiro": "Fulano",
-    "data": "2025-06-01",
-    "horario": "14:00"
+    "data": "2025-06-28",
+    "horario": "14:00",
+    "estado": "Agendado"
   },
   {
     "id": 1747244879936,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Larissa Melo",
+    "usuario": "{\"email\":\"larissa14@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Sobrancelha",
+    "preco": 10,
     "barbeiro": "Fulano",
-    "data": "2025-06-01",
-    "horario": "14:30"
+    "data": "2025-06-28",
+    "horario": "14:30",
+    "estado": "Agendado"
   },
   {
     "id": 1747244884867,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Vinicius Teixeira",
+    "usuario": "{\"email\":\"vinicius15@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-06-01",
-    "horario": "15:00"
+    "data": "2025-06-28",
+    "horario": "15:00",
+    "estado": "Agendado"
   },
   {
     "id": 1747244889359,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Beatriz Faria",
+    "usuario": "{\"email\":\"beatriz16@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Sobrancelha",
+    "preco": 10,
     "barbeiro": "Fulano",
-    "data": "2025-06-01",
-    "horario": "15:30"
+    "data": "2025-06-28",
+    "horario": "15:30",
+    "estado": "Agendado"
   },
   {
     "id": 1747244893821,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Rodrigo Lopes",
+    "usuario": "{\"email\":\"rodrigo17@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Barba",
+    "preco": 20,
     "barbeiro": "Fulano",
-    "data": "2025-06-01",
-    "horario": "16:00"
+    "data": "2025-06-28",
+    "horario": "16:00",
+    "estado": "Agendado"
   },
   {
     "id": 1747244897944,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Aline Ribeiro",
+    "usuario": "{\"email\":\"aline18@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-06-01",
-    "horario": "16:30"
+    "data": "2025-06-28",
+    "horario": "16:30",
+    "estado": "Agendado"
   },
   {
     "id": 1747244910380,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Felipe Barros",
+    "usuario": "{\"email\":\"felipe19@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-06-01",
-    "horario": "17:00"
+    "data": "2025-06-28",
+    "horario": "17:00",
+    "estado": "Agendado"
   },
   {
     "id": 1747244914790,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Tatiane Souza",
+    "usuario": "{\"email\":\"tatiane20@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-06-01",
-    "horario": "17:30"
+    "data": "2025-06-28",
+    "horario": "17:30",
+    "estado": "Agendado"
   },
   {
     "id": 1747364527349,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Gabriel Silva",
+    "usuario": "{\"email\":\"gabriel21@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-06-01",
-    "horario": "18:00"
+    "data": "2025-06-28",
+    "horario": "18:00",
+    "estado": "Agendado"
   },
   {
     "id": 1747337453195,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Renata Cardoso",
+    "usuario": "{\"email\":\"renata22@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulano",
     "data": "2025-05-15",
-    "horario": "08:00"
+    "horario": "08:00",
+    "estado": "Efetuado e Pago"
   },
-
-
-
   {
-    "id": 1747244778964, 
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "id": 1747244778964,
+    "cliente": "André Souza",
+    "usuario": "{\"email\":\"joao23@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-06-01",
-    "horario": "08:00"
+    "data": "2025-06-28",
+    "horario": "08:00",
+    "estado": "Agendado"
   },
   {
     "id": 1747244815979,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Paula Fernandes",
+    "usuario": "{\"email\":\"maria24@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-06-01",
-    "horario": "08:30"
+    "data": "2025-06-28",
+    "horario": "08:30",
+    "estado": "Agendado"
   },
   {
     "id": 1747244820441,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Ricardo Alves",
+    "usuario": "{\"email\":\"carlos25@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-06-01",
-    "horario": "09:00"
+    "data": "2025-06-28",
+    "horario": "09:00",
+    "estado": "Agendado"
   },
   {
     "id": 1747244825140,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Juliana Souza",
+    "usuario": "{\"email\":\"ana26@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-06-01",
-    "horario": "09:30"
+    "data": "2025-06-28",
+    "horario": "09:30",
+    "estado": "Agendado"
   },
   {
     "id": 1747244835331,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Thiago Mendes",
+    "usuario": "{\"email\":\"pedro27@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-06-01",
-    "horario": "10:00"
+    "data": "2025-06-28",
+    "horario": "10:00",
+    "estado": "Agendado"
   },
   {
     "id": 1747244839677,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Patrícia Lima",
+    "usuario": "{\"email\":\"juliana28@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-06-01",
-    "horario": "10:30"
+    "data": "2025-06-28",
+    "horario": "10:30",
+    "estado": "Agendado"
   },
   {
     "id": 1747244844941,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Mariana Costa",
+    "usuario": "{\"email\":\"lucas29@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-06-01",
-    "horario": "11:00"
+    "data": "2025-06-28",
+    "horario": "11:00",
+    "estado": "Agendado"
   },
   {
     "id": 1747244850420,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Roberto Dias",
+    "usuario": "{\"email\":\"fernanda30@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-06-01",
-    "horario": "11:30"
+    "data": "2025-06-28",
+    "horario": "11:30",
+    "estado": "Agendado"
   },
   {
     "id": 1747244854665,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Sofia Martins",
+    "usuario": "{\"email\":\"rafael31@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-06-01",
-    "horario": "12:00"
+    "data": "2025-06-28",
+    "horario": "12:00",
+    "estado": "Agendado"
   },
   {
     "id": 1747244859891,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Bruna Teixeira",
+    "usuario": "{\"email\":\"patricia32@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-06-01",
-    "horario": "12:30"
+    "data": "2025-06-28",
+    "horario": "12:30",
+    "estado": "Agendado"
   },
   {
     "id": 1747244865724,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Henrique Lopes",
+    "usuario": "{\"email\":\"bruno33@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-06-01",
-    "horario": "13:00"
+    "data": "2025-06-28",
+    "horario": "13:00",
+    "estado": "Agendado"
   },
   {
     "id": 1747244870454,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Débora Nunes",
+    "usuario": "{\"email\":\"camila34@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Barba",
+    "preco": 20,
     "barbeiro": "Fulaninho",
-    "data": "2025-06-01",
-    "horario": "13:30"
+    "data": "2025-06-28",
+    "horario": "13:30",
+    "estado": "Agendado"
   },
   {
     "id": 1747244875034,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Marcelo Faria",
+    "usuario": "{\"email\":\"eduardo35@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Sobrancelha",
+    "preco": 10,
     "barbeiro": "Fulaninho",
-    "data": "2025-06-01",
-    "horario": "14:00"
+    "data": "2025-06-28",
+    "horario": "14:00",
+    "estado": "Agendado"
   },
   {
     "id": 1747244879936,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Tatiana Melo",
+    "usuario": "{\"email\":\"larissa36@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Sobrancelha",
+    "preco": 10,
     "barbeiro": "Fulaninho",
-    "data": "2025-06-01",
-    "horario": "14:30"
+    "data": "2025-06-28",
+    "horario": "14:30",
+    "estado": "Agendado"
   },
   {
     "id": 1747244884867,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Leandro Barros",
+    "usuario": "{\"email\":\"vinicius37@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-06-01",
-    "horario": "15:00"
+    "data": "2025-06-28",
+    "horario": "15:00",
+    "estado": "Agendado"
   },
   {
     "id": 1747244889359,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Amanda Ribeiro",
+    "usuario": "{\"email\":\"beatriz38@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Sobrancelha",
+    "preco": 10,
     "barbeiro": "Fulaninho",
-    "data": "2025-06-01",
-    "horario": "15:30"
+    "data": "2025-06-28",
+    "horario": "15:30",
+    "estado": "Agendado"
   },
   {
     "id": 1747244893821,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Otávio Cardoso",
+    "usuario": "{\"email\":\"rodrigo39@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Barba",
+    "preco": 20,
     "barbeiro": "Fulaninho",
-    "data": "2025-06-01",
-    "horario": "16:00"
+    "data": "2025-06-28",
+    "horario": "16:00",
+    "estado": "Agendado"
   },
   {
     "id": 1747244897944,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Isabela Souza",
+    "usuario": "{\"email\":\"aline40@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-06-01",
-    "horario": "16:30"
+    "data": "2025-06-28",
+    "horario": "16:30",
+    "estado": "Agendado"
   },
   {
     "id": 1747244910380,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Murilo Fernandes",
+    "usuario": "{\"email\":\"felipe41@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-06-01",
-    "horario": "17:00"
+    "data": "2025-06-28",
+    "horario": "17:00",
+    "estado": "Agendado"
   },
   {
     "id": 1747244914790,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Gabriela Lima",
+    "usuario": "{\"email\":\"tatiane42@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-06-01",
-    "horario": "17:30"
+    "data": "2025-06-28",
+    "horario": "17:30",
+    "estado": "Agendado"
   },
   {
     "id": 1747364527349,
-    "usuario": "{\"email\":\"teste@gmail.com\",\"tipo\":\"cliente\"}",
+    "cliente": "Fernando Oliveira",
+    "usuario": "{\"email\":\"gabriel43@gmail.com\",\"tipo\":\"cliente\"}",
     "servico": "Cabelo",
+    "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-06-01",
-    "horario": "18:00"
+    "data": "2025-06-28",
+    "horario": "18:00",
+    "estado": "Agendado"
+  },
+  {
+    "id": 1749581603865,
+    "cliente": "Marcos Vieira",
+    "usuario": "{\"email\":\"marcos44@gmail.com\",\"tipo\":\"cliente\"}",
+    "servico": "Cabelo",
+    "preco": 30,
+    "barbeiro": "Fulano",
+    "data": "2025-06-10",
+    "horario": "11:00",
+    "estado": "Efetuado e Pago"
+  },
+  {
+    "id": 1750631561090,
+    "cliente": "Teste",
+    "usuario": "{\"nome\":\"Teste\",\"email\":\"teste45@gmail.com\",\"tipo\":\"cliente\"}",
+    "servico": "Cabelo",
+    "preco": 30,
+    "barbeiro": "Fulano",
+    "data": "2025-06-22",
+    "horario": "08:30",
+    "estado": "Cancelado"
   }
 ]

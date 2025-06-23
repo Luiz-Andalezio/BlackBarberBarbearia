@@ -1,3 +1,4 @@
+/* Reset and Base Styles */
 body {
     margin: 0;
     padding: 0;
@@ -5,82 +6,154 @@ body {
     background: url('../img/vintage-barber.png') no-repeat center center fixed;
     background-size: cover;
     color: #fff;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
-.rye-regular {
+/* Typography */
+h1, .rye-regular {
     font-family: "Rye", serif;
     font-weight: 400;
     font-style: normal;
-}
-
-.container {
-    width: 400px;
-    margin: 100px auto;
-    padding: 20px;
-    background-color: #393939;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 2px #000;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 h1 {
-    font-family: 'Georgia', serif;
-    text-align: center;
-    font-size: 3em;
-    margin-bottom: 40px;
+    font-size: 2.5em;
+    margin-bottom: 30px;
 }
 
+/* Container */
+.container {
+    width: 400px;
+    max-width: 90vw;
+    margin: 80px auto;
+    padding: 32px 28px 24px 28px;
+    background: rgba(30, 30, 30, 0.97);
+    border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* Form Layout */
 form {
     display: flex;
     flex-direction: column;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+label {
+    font-size: 1.1em;
+    color: #e0e0e0;
+    margin-bottom: 2px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    text-align: left;
+}
+
+#signTypeText {
+    margin-top:1px;
+    margin-bottom:-10px;
+    font-size:1.5rem;
+    font-weight:400;
+}
+
+/* Inputs & Selects */
+input,
+select {
+    font-size: 1.1em;
+    padding: 12px 10px;
+    border-radius: 8px;
+    border: 1.5px solid #444;
+    background-color: #232323;
+    color: #fff;
+    transition: border 0.2s, background 0.2s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border: 1.5px solid #fff;
+    background-color: #181818;
 }
 
 input::placeholder {
-    color: #959595;
+    color: #b0b0b0;
+    opacity: 1;
 }
 
-input,
-select,
+/* Button */
 button {
-    font-size: 1.5em;
+    font-size: 1.2em;
     border: none;
-    background-color: #656565;
-    color: white;
-}
-button {
-    background-color: #9C9C9C;
+    background: linear-gradient(90deg, #444 0%, #222 100%);
     color: #fff;
-    cursor: pointer;
     border-radius: 50px;
-    padding: 10px 20px;
-    align-self: center; 
+    padding: 12px 0;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 button:hover {
-    background-color: #ccc;
+    background: #fff;
+    color: #222;
 }
 
+/* Links */
+a {
+    color: #fff;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #bbb;
+}
+
+/* Footer */
 .footer {
-    justify-content: center;
-    text-align: center;
     position: fixed;
     bottom: 10px;
     right: 10px;
-    font-size: 0.8em;
-    color: #ccc;
+    font-size: 0.9em;
+    color: #bbb;
+    text-align: right;
+    opacity: 0.85;
 }
 
-#role {
-    font-size: 1.5em;
-    width: 100%;
-    margin-bottom: 10px;
+/* Responsive */
+@media (max-width: 500px) {
+    .container {
+        width: 98vw;
+        padding: 18px 6vw 18px 6vw;
+        margin: 30px auto;
+    }
+    h1 {
+        font-size: 1.6em;
+    }
 }
 
-#email,
-#senha,
-#nome,
-#telefone,
-#emailRegister,
-#senhaRegister,
-#confirmarSenha {
-    width: 98.9%;
-}
+/* Hide yellow, use only grayscale */
+::-webkit-input-placeholder { color: #b0b0b0; }
+::-moz-placeholder { color: #b0b0b0; }
+:-ms-input-placeholder { color: #b0b0b0; }
+::placeholder { color: #b0b0b0; }

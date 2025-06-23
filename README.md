@@ -58,9 +58,9 @@ Com um sistema simples e eficiente, profissionais poderão gerenciar serviços, 
 
 ## 📈 Status do Projeto
 
-> **Progresso atual**: 56% (Prototipado em ambiente local).
+> **Progresso atual**: 80% (Prototipado em ambiente local).
 
-> **Próximos passos**: Otimização do backend, integração de login com validações completas e deploy futuro.
+> **Próximos passos**: Verificações de ações, tabela com histórico de agendamentos do usuário, edição de informações da conta.
 
 ---
 

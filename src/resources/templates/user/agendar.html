@@ -7,7 +7,7 @@
     <title>Black Barber Barbearia</title>
     <link rel="icon" href="../../static/img/logoWhite.png" type="image/x-icon">
     <link rel="stylesheet" href="../../static/css/index.css">
-    <link rel="stylesheet" href="../../static/css/tabelaAgendar.css">
+    <link rel="stylesheet" href="../../static/css/agendar.css">
     <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
 </head>
 
@@ -16,11 +16,11 @@
     <nav class="navbar">
         <div class="navbar-left">
             <img src="../../static/img/logo.webp" alt="Logo Black Barber" class="logo">
-            <a href="index.html" class="tab" id="navbarBtn">Boas-vindas</a>
-            <a href="agendar.html" class="tab active" id="navbarBtn">Agendar</a>
+            <a href="/user/index.html" class="tab" id="navbarBtn">Boas-vindas</a>
+            <a href="/user/agendar.html" class="tab active" id="navbarBtn">Agendar</a>
         </div>
         <div class="navbar-right">
-            <a href="../login.html" class="tab" id="loginBtn">Logar</a>
+            <a href="/login.html" class="tab" id="loginBtn">Logar</a>
         </div>
     </nav>
 
@@ -66,6 +66,22 @@
             </div>
 
             <button id="confirmar-agendamento" class="confirm-button">Confirmar Agendamento</button>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmação de Agendamento -->
+    <div id="confirmacao-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-confirmacao-modal" class="close-modal">&times;</span>
+            <h2>Confirmar Agendamento</h2>
+            <span id="destaque-bold">
+                Tem certeza que deseja confirmar este agendamento?</span><br><br>
+                <span id="destaque-amarelo">
+                    ⚠️ Você poderá cancelar depois, mas não poderá reagendar para a mesma data e horário.</span>
+                </span>
+            </p>
+            <button id="btn-confirmar-sim" class="confirm-button active">Sim, Confirmar</button>
+            <button id="btn-confirmar-nao" class="confirm-button btn-cancelar">Cancelar</button>
         </div>
     </div>
 

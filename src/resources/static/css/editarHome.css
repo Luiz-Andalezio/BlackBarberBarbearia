@@ -10,8 +10,8 @@
     max-width: 1000px;
     margin: 30px auto;
     padding: 30px;
-    background-color: #424242;
-    border-radius: 50px;
+    background-color: #2A2A2A;
+    border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -22,41 +22,45 @@
 
 #infoForm label {
     font-family: 'Freeman', sans-serif;
-    margin-left: -12px;
+    margin-left: -11px;
     font-size: 1.5rem;
 }
 
 #infoForm input {
     width: 100%;
+    color: white;
+    border: none;
     padding: 8px;
+    padding: 10px;
     font-size: 1rem;
-    margin-bottom: 20px;
     margin-top: 5px;
     margin-left: -12px;
-    background-color: #656565;
-    border: 1px solid #ccc;
-    color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: #3A3A3A;
+}
+
+#infoForm input:focus {
+    outline: none;
+    border: 2px solid #00BFFF;
 }
 
 #salvarBtn {
     font-size: large;
     font-weight: bold;
-    background-color: #9C9C9C;
+    background-color: #28A745;
     color: white;
     padding: 10px 15px;
-    font-size: 1rem;
-    border: black;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
     display: block;
     margin: 20px auto 0;
+    transition: background-color 0.2s;
 }
 
 #salvarBtn:disabled {
-    font-size: large;
-    font-weight: bold;
     background-color: #555555;
-    color:#656565;
-    border:black;
+    color: #656565;
     cursor: not-allowed;
 }
