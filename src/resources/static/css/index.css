@@ -86,6 +86,35 @@ body {
     min-height: 260px;
 }
 
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.8rem;
+    color: #d4d4d4;
+    border-radius: 50%;
+    width: 54px;
+    height: 54px;
+    line-height: 54px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 2;
+    user-select: none;
+}
+
+.carousel-arrow.left {
+    left: 18px;
+}
+.carousel-arrow.right {
+    right: 18px;
+}
+.carousel-arrow:hover {
+    color: #ffffff;
+}
+.carousel {
+    position: relative;
+}
+
 .slides {
     display: flex;
     transition: transform 0.6s cubic-bezier(.77,0,.18,1);
