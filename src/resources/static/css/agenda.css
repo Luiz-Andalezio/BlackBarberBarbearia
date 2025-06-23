@@ -107,3 +107,30 @@
 .status-dropdown.open .status-options {
     display: block;
 }
+
+.agenda-tabelas {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;flex-wrap: wrap;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+.agenda-col {
+    flex: 1 1 420px;
+    min-width: 340px;
+}
+.agenda-col h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 12px;
+}
+.data-cell.data-vencida .excedida {
+    color: #ff3b3b;
+    font-size: 0.95em;
+    font-style: italic;
+    margin-left: 4px;
+    font-weight: bold;
+}

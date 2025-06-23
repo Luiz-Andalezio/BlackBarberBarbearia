@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Agenda do Barbeiro</title>
+    <link rel="icon" href="../../static/img/logoWhite.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../static/css/index.css">
+    <link rel="stylesheet" href="../../static/css/agenda.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Freeman&family=Inter&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="../../static/img/logo.webp" alt="Logo Black Barber" class="logo">
+            <a href="/admin/agenda.html" class="tab active" id="navbarBtn">Agendas</a>
+            <a href="/admin/editarHome.html" class="tab" id="navbarBtn">Editar Home</a>
+            <a href="/admin/editarServicos.html" class="tab" id="navbarBtn">Editar Serviços</a>
+        </div>
+        <div class="navbar-right">
+            <a href="/login.html" class="tab" id="loginBtn">Logar</a>
+        </div>
+    </nav>
+
+    <h1 id="title">Agendas do Barbeiro</h1>
+
+    <div class="agenda-tabelas">
+        <div class="agenda-col">
+            <h2>Agendamentos Programados</h2>
+            <table class="agenda-table">
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Serviço</th>
+                        <th>Profissional</th>
+                        <th>Data e Horário</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="agenda-tbody-programados"></tbody>
+            </table>
+        </div>
+        <div class="agenda-col">
+            <h2>Agendamentos Excedidos</h2>
+            <table class="agenda-table">
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Serviço</th>
+                        <th>Profissional</th>
+                        <th>Data e Horário</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="agenda-tbody-excedidos"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../../static/js/agenda.js"></script>
+    <script src="../../static/js/session.js" defer></script>
+</body>
+
+</html>

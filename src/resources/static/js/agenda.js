@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", async function () {
-    const tbody = document.querySelector("#agenda-tbody");
+    const tbodyProgramados = document.querySelector("#agenda-tbody-programados");
+    const tbodyExcedidos = document.querySelector("#agenda-tbody-excedidos");
 
     // Carrega os agendamentos
     const agendamentos = await fetch("/api/agendamentos").then(r => r.json());
@@ -21,67 +22,115 @@ document.addEventListener("DOMContentLoaded", async function () {
         return "status-agendado";
     }
 
-    agendamentos.forEach(ag => {
-        const tr = document.createElement("tr");
-        tr.setAttribute('data-id', ag.id);
-        tr.innerHTML = `
-        <td>${ag.cliente}</td>
-        <td>
-            <div>${ag.servico}</div>
-            <div class="price">R$ ${ag.preco}</div>
-            <div class="time">${tempoServico(ag.servico)}</div>
-        </td>
-        <td>${ag.barbeiro}</td>
-        <td>${formatarDataHora(ag.data, ag.horario)}</td>
-        <td>
-            <div class="status-dropdown">
-                <button class="status-btn ${statusClass(ag.estado)}">${ag.estado}</button>
-                <div class="status-options">
-                    <button class="option status-agendado" data-status="Agendado">Agendado</button>
-                    <button class="option status-efetuado" data-status="Efetuado e Pago">Efetuado e Pago</button>
-                    <button class="option status-cancelado" data-status="Cancelado">Cancelado</button>
-                </div>
-            </div>
-        </td>
-    `;
-        tbody.appendChild(tr);
-    });
+    const agora = new Date();
 
-    // Dropdown customizado
-    tbody.addEventListener('click', async function (e) {
-        const btn = e.target.closest('.status-btn');
-        const option = e.target.closest('.option');
-        const dropdown = e.target.closest('.status-dropdown');
-        if (btn && dropdown) {
-            // Toggle dropdown
-            document.querySelectorAll('.status-dropdown').forEach(d => {
-                if (d !== dropdown) d.classList.remove('open');
-            });
-            dropdown.classList.toggle('open');
-        } else if (option && dropdown) {
-            // Seleciona opção
-            const newStatus = option.getAttribute('data-status');
-            const statusBtn = dropdown.querySelector('.status-btn');
-            statusBtn.textContent = newStatus;
-            statusBtn.className = `status-btn ${statusClass(newStatus)}`;
-            dropdown.classList.remove('open');
-            // Atualiza backend
-            const tr = dropdown.closest('tr');
-            const agendamentoId = tr.getAttribute('data-id');
-            if (agendamentoId) {
-                await fetch(`/api/agendamentos/${agendamentoId}/estado`, {
-                    method: "PUT",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ estado: newStatus })
-                });
-            }
-        } else {
-            // Fecha dropdown se clicar fora
-            document.querySelectorAll('.status-dropdown').forEach(d => d.classList.remove('open'));
+    // Separe em programados e excedidos
+    const programados = [];
+    const excedidos = [];
+
+    agendamentos.forEach(ag => {
+        const dataAg = ag.data && ag.horario ? new Date(`${ag.data}T${ag.horario}`) : null;
+        if (dataAg && dataAg >= agora) {
+            programados.push({ ...ag, dataAg });
+        } else if (dataAg) {
+            excedidos.push({ ...ag, dataAg });
         }
     });
 
-    // Fecha dropdown ao clicar fora
+    // Ordene: programados (mais próximo primeiro), excedidos (mais recente primeiro)
+    programados.sort((a, b) => a.dataAg - b.dataAg);
+    excedidos.sort((a, b) => b.dataAg - a.dataAg);
+
+    // Render programados
+    programados.forEach(ag => {
+        const tr = document.createElement("tr");
+        tr.setAttribute('data-id', ag.id);
+        tr.innerHTML = `
+            <td>${ag.cliente}</td>
+            <td>
+                <div>${ag.servico}</div>
+                <div class="price">R$ ${ag.preco}</div>
+                <div class="time">${tempoServico(ag.servico)}</div>
+            </td>
+            <td>${ag.barbeiro}</td>
+            <td>${formatarDataHora(ag.data, ag.horario)}</td>
+            <td>
+                <div class="status-dropdown">
+                    <button class="status-btn ${statusClass(ag.estado)}">${ag.estado}</button>
+                    <div class="status-options">
+                        <button class="option status-agendado" data-status="Agendado">Agendado</button>
+                        <button class="option status-efetuado" data-status="Efetuado e Pago">Efetuado e Pago</button>
+                        <button class="option status-cancelado" data-status="Cancelado">Cancelado</button>
+                    </div>
+                </div>
+            </td>
+        `;
+        tbodyProgramados.appendChild(tr);
+    });
+
+    // Render excedidos
+    excedidos.forEach(ag => {
+        const tr = document.createElement("tr");
+        tr.setAttribute('data-id', ag.id);
+        tr.classList.add("agendamento-vencido");
+        tr.innerHTML = `
+            <td>${ag.cliente}</td>
+            <td>
+                <div>${ag.servico}</div>
+                <div class="price">R$ ${ag.preco}</div>
+                <div class="time">${tempoServico(ag.servico)}</div>
+            </td>
+            <td>${ag.barbeiro}</td>
+            <td class="data-cell data-vencida">
+                ${formatarDataHora(ag.data, ag.horario)}
+                <span class="excedida">(data excedida)</span>
+            </td>
+            <td>
+                <div class="status-dropdown">
+                    <button class="status-btn ${statusClass(ag.estado)}">${ag.estado}</button>
+                    <div class="status-options">
+                        <button class="option status-agendado" data-status="Agendado">Agendado</button>
+                        <button class="option status-efetuado" data-status="Efetuado e Pago">Efetuado e Pago</button>
+                        <button class="option status-cancelado" data-status="Cancelado">Cancelado</button>
+                    </div>
+                </div>
+            </td>
+        `;
+        tbodyExcedidos.appendChild(tr);
+    });
+
+    // Dropdown customizado (igual ao seu)
+    document.querySelectorAll('.agenda-table').forEach(table => {
+        table.addEventListener('click', async function (e) {
+            const btn = e.target.closest('.status-btn');
+            const option = e.target.closest('.option');
+            const dropdown = e.target.closest('.status-dropdown');
+            if (btn && dropdown) {
+                document.querySelectorAll('.status-dropdown').forEach(d => {
+                    if (d !== dropdown) d.classList.remove('open');
+                });
+                dropdown.classList.toggle('open');
+            } else if (option && dropdown) {
+                const newStatus = option.getAttribute('data-status');
+                const statusBtn = dropdown.querySelector('.status-btn');
+                statusBtn.textContent = newStatus;
+                statusBtn.className = `status-btn ${statusClass(newStatus)}`;
+                dropdown.classList.remove('open');
+                const tr = dropdown.closest('tr');
+                const agendamentoId = tr.getAttribute('data-id');
+                if (agendamentoId) {
+                    await fetch(`/api/agendamentos/${agendamentoId}/estado`, {
+                        method: "PUT",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ estado: newStatus })
+                    });
+                }
+            } else {
+                document.querySelectorAll('.status-dropdown').forEach(d => d.classList.remove('open'));
+            }
+        });
+    });
+
     document.addEventListener('click', function (e) {
         if (!e.target.closest('.status-dropdown')) {
             document.querySelectorAll('.status-dropdown').forEach(d => d.classList.remove('open'));

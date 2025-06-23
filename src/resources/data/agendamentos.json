@@ -8,7 +8,7 @@
     "barbeiro": "Fulano",
     "data": "2025-06-28",
     "horario": "08:00",
-    "estado": "Efetuado e Pago"
+    "estado": "Agendado"
   },
   {
     "id": 1747244815979,
@@ -239,7 +239,7 @@
     "barbeiro": "Fulano",
     "data": "2025-05-15",
     "horario": "08:00",
-    "estado": "Agendado"
+    "estado": "Efetuado e Pago"
   },
   {
     "id": 1747244778964,
@@ -481,7 +481,7 @@
     "barbeiro": "Fulano",
     "data": "2025-06-10",
     "horario": "11:00",
-    "estado": "Agendado"
+    "estado": "Efetuado e Pago"
   },
   {
     "id": 1750631561090,
@@ -492,6 +492,6 @@
     "barbeiro": "Fulano",
     "data": "2025-06-22",
     "horario": "08:30",
-    "estado": "Agendado"
+    "estado": "Cancelado"
   }
 ]
