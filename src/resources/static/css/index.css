@@ -1,8 +1,11 @@
 body {
     margin: 0;
-    background-color: #1e1e1e;
+    background-color: #181818;
     font-family: Arial, sans-serif;
     color: #fff;
+    min-height: 100vh;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 /* Navbar */
@@ -12,18 +15,21 @@ body {
     align-items: center;
     background-color: #D7D7D7;
     padding: 7px 10px 0px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .navbar-left {
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
 .navbar-right a {
     display: flex;
     align-items: center;
-    color: black;
+    color: #222;
     text-decoration: none;
+    transition: color 0.2s;
 }
 
 .logo {
@@ -33,64 +39,81 @@ body {
 }
 
 .tab {
-    padding: 10px 15px;
-    margin-right: 20px;
-    background-color: #C2C2C2;
-    color: black;
+    padding: 10px 18px;
+    margin-right: 12px;
+    background: linear-gradient(180deg, #C2C2C2 80%, #b0b0b0 100%);
+    color: #222;
     text-decoration: none;
-    border-radius: 8px 8px 0 0;
-    text-shadow: 0px 4px 3px #969696;
+    border-radius: 10px 10px 0 0;
+    text-shadow: 0 2px 2px #969696;
+    font-weight: 500;
+    transition: 
+        background 0.2s,
+        color 0.2s,
+        box-shadow 0.2s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    position: relative;
+}
+
+.tab:hover:not(.active) {
+    background: #b6b6b6;
+    color: #111;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.10);
 }
 
 .tab.active {
-    padding: 10px 15px;
-    background-color: #1e1e1e;
-    color: white;
+    background: #181818;
+    color: #fff;
     font-weight: bold;
     text-shadow: none;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    z-index: 1;
 }
 
 #navbarBtn,
 #loginBtn {
     font-family: 'Playfair Display', serif;
-    font-size: 30px;
-    font-style: bold;
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 
 .carousel {
     position: relative;
     overflow: hidden;
+    width: 100vw;
     max-width: 100%;
-    margin: 20px 0;
-}
-
-#barbearia_cont {
-    width: 1500px;
-    height: 300px;
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
-}
-
-#barbearia_cont img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    object-position: center;
+    margin: 24px 0 0 0;
+    min-height: 260px;
 }
 
 .slides {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.6s cubic-bezier(.77,0,.18,1);
+    width: 100%;
 }
 
 .slide {
     display: none;
+    width: 100vw;
+    max-width: 100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 18px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+    opacity: 0;
+    transition: opacity 0.5s;
 }
 
 .slide.active {
     display: block;
+    opacity: 1;
+    animation: fadeIn 0.7s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.98);}
+    to { opacity: 1; transform: scale(1);}
 }
 
 .dots {
@@ -99,46 +122,65 @@ body {
 }
 
 .dot {
-    height: 10px;
-    width: 10px;
-    margin: 0 4px;
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
     cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    border: 2px solid transparent;
 }
 
 .dot.active {
-    background-color: #717171;
+    background-color: #222;
+    border-color: #fff;
+    transform: scale(1.2);
 }
 
 .info-container {
-    width: 75%;
-    max-width: 1500px;
-    margin: 30px auto;
+    width: 90vw;
+    max-width: 1200px;
+    margin: 32px auto;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: flex-start;
-    background-color: #424242;
-    padding: 25px;
-    border-radius: 50px;
+    background: linear-gradient(120deg, #333 60%, #424242 100%);
+    padding: 32px 4vw;
+    border-radius: 32px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    gap: 32px;
 }
 
 .info-text {
-    max-width: 50%;
-    font-size: 30px;
+    flex: 1 1 320px;
+    max-width: 48%;
+    font-size: 1.3rem;
+    color: #f5f5f5;
+    line-height: 1.5;
 }
 
 .info-text p {
-    color: #f5f5f5;
-    margin-bottom: 10px;
+    color: #fafafa;
+    margin-bottom: 12px;
     font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.info-map {
+    flex: 1 1 320px;
+    max-width: 48%;
+    min-width: 260px;
 }
 
 .info-map iframe {
-    padding: 0% 0% 0%;
     width: 100%;
-    height: 500px;
+    height: 340px;
+    border: none;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
 }
 
 .freeman {
@@ -146,5 +188,47 @@ body {
 }
 
 .tnr {
-    font-family: 'Times New Roman', sans-serif;
+    font-family: 'Times New Roman', serif;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .info-container {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 24px 2vw;
+        gap: 24px;
+    }
+    .info-text, .info-map {
+        max-width: 100%;
+    }
+    .slide, #barbearia_cont {
+        height: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 2vw 0;
+    }
+    .logo {
+        margin-bottom: 8px;
+    }
+    .tab {
+        font-size: 1rem;
+        padding: 8px 10px;
+        margin-right: 6px;
+    }
+    .slide, #barbearia_cont {
+        height: 120px;
+    }
+    .info-container {
+        padding: 14px 1vw;
+        border-radius: 16px;
+    }
+    .info-map iframe {
+        height: 180px;
+    }
 }

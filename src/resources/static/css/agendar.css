@@ -24,9 +24,7 @@ body {
     max-width: 960px;
     margin: 40px auto;
     padding: 32px 24px;
-    background: rgba(44,44,44,0.98);
     border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
 }
 
 /* Item de serviço */
@@ -99,6 +97,7 @@ body {
     justify-content: center;
     align-items: center;
     animation: fadeIn 0.3s;
+    overflow-y: auto;
 }
 @keyframes fadeIn {
     from { opacity: 0; }
@@ -114,6 +113,8 @@ body {
     box-shadow: 0 8px 32px rgba(0,0,0,0.35);
     animation: slideDown 0.3s;
     padding: 20px;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 @keyframes slideDown {
     from { transform: translateY(-40px); opacity: 0; }
@@ -307,11 +308,19 @@ body {
 }
 
 #confirmacao-modal h2 {
-    color: #FFD700;
+    color: #19e449;
     font-family: 'Freeman', 'Segoe UI', Arial, sans-serif;
     margin-bottom: 18px;
     font-size: 2rem;
     letter-spacing: 1px;
+}
+
+#destaque-bold {
+    font-weight: bold;
+}
+
+#destaque-amarelo {
+    color: #FFD700;
 }
 
 #confirmacao-modal p {
