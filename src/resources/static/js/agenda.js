@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         const tr = document.createElement("tr");
         tr.setAttribute('data-id', ag.id);
         tr.innerHTML = `
-            <td>${ag.cliente}</td>
+            <td>${ag.nomeCliente}</td>
             <td>
                 <div>${ag.servico}</div>
                 <div class="price">R$ ${ag.preco}</div>
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         tr.setAttribute('data-id', ag.id);
         tr.classList.add("agendamento-vencido");
         tr.innerHTML = `
-            <td>${ag.cliente}</td>
+            <td>${ag.nomeCliente}</td>
             <td>
                 <div>${ag.servico}</div>
                 <div class="price">R$ ${ag.preco}</div>

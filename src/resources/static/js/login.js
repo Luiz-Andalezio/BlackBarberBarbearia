@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (data.sucesso) {
                 const usuario = {
+                    id: data.id,
                     nome: data.nome,
                     email: data.email,
                     tipo: data.tipo
