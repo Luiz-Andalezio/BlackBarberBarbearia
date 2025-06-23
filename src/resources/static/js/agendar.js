@@ -71,7 +71,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    btnConfirmarAgendamento.addEventListener("click", confirmarAgendamento);
+    btnConfirmarAgendamento.addEventListener("click", () => {
+        document.getElementById("confirmacao-modal").style.display = "flex";
+    });
 
     function resetarSelecoes() {
         barbeiroSelecionado = null;
@@ -298,6 +300,21 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .catch(err => console.error("Erro ao enviar agendamento:", err));
     }
+    const modalConfirmacao = document.getElementById("confirmacao-modal");
+    const btnConfirmarSim = document.getElementById("btn-confirmar-sim");
+    const btnConfirmarNao = document.getElementById("btn-confirmar-nao");
+    const closeConfirmacaoModal = document.getElementById("close-confirmacao-modal");
+
+    btnConfirmarSim.addEventListener("click", () => {
+        confirmarAgendamento();
+        modalConfirmacao.style.display = "none";
+    });
+    btnConfirmarNao.addEventListener("click", () => {
+        modalConfirmacao.style.display = "none";
+    });
+    closeConfirmacaoModal.addEventListener("click", () => {
+        modalConfirmacao.style.display = "none";
+    });
 });
 
 function isHoje(date) {
