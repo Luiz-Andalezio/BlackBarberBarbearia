@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
             servicesContainer.innerHTML = "<p>Erro ao carregar serviços.</p>";
         });
 
-    if (btnLogin) btnLogin.addEventListener("click", () => window.location.href = "login.html");
+    if (btnLogin) btnLogin.addEventListener("click", () => window.location.href = "/login.html");
     [btnCancelar, closeLoginModal].forEach(el => el?.addEventListener("click", () => modalLogin.style.display = "none"));
     if (closeAgendamentoModal) {
         closeAgendamentoModal.addEventListener("click", () => {
