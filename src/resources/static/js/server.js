@@ -252,7 +252,8 @@ app.post("/api/agendamentos", (req, res) => {
     barbeiro,
     data,
     horario,
-    estado: "Agendado"
+    estado: "Agendado",
+    canceladoCliente: false
   };
 
   agendamentos.push(novoAgendamento);
@@ -270,7 +271,7 @@ app.put("/api/agendamentos/:id/estado", (req, res) => {
     agendamentos = JSON.parse(fs.readFileSync(agendamentosPath, "utf8"));
   }
 
-  const index = agendamentos.findIndex(a => String(a.id) === String(id));
+  const index = agendamentos.findIndex(a => String(a.idAgendamento) === String(id));
   if (index === -1) {
     return res.status(404).json({ erro: "Agendamento não encontrado" });
   }
@@ -278,6 +279,22 @@ app.put("/api/agendamentos/:id/estado", (req, res) => {
   agendamentos[index].estado = estado;
   fs.writeFileSync(agendamentosPath, JSON.stringify(agendamentos, null, 2));
   res.json({ sucesso: true, mensagem: "Estado atualizado com sucesso." });
+});
+
+app.put("/api/agendamentos/:id/cancelar-cliente", (req, res) => {
+  const { id } = req.params;
+  let agendamentos = [];
+  if (fs.existsSync(agendamentosPath)) {
+    agendamentos = JSON.parse(fs.readFileSync(agendamentosPath, "utf8"));
+  }
+  const index = agendamentos.findIndex(a => String(a.idAgendamento) === String(id));
+  if (index === -1) {
+    return res.status(404).json({ erro: "Agendamento não encontrado" });
+  }
+  agendamentos[index].canceladoCliente = true;
+  agendamentos[index].estado = "Cancelado pelo cliente";
+  fs.writeFileSync(agendamentosPath, JSON.stringify(agendamentos, null, 2));
+  res.json({ sucesso: true, mensagem: "Agendamento cancelado pelo cliente." });
 });
 
 // ===== ROTAS DE ARQUIVOS ESTÁTICOS E BUILD =====
