@@ -8,7 +8,8 @@
     "barbeiro": "Fulano",
     "data": "2025-07-04",
     "horario": "08:00",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244815979,
@@ -19,7 +20,8 @@
     "barbeiro": "Fulano",
     "data": "2025-07-04",
     "horario": "08:30",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244820441,
@@ -30,7 +32,8 @@
     "barbeiro": "Fulano",
     "data": "2025-07-04",
     "horario": "09:00",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244825140,
@@ -41,7 +44,8 @@
     "barbeiro": "Fulano",
     "data": "2025-07-04",
     "horario": "09:30",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244835331,
@@ -52,7 +56,8 @@
     "barbeiro": "Fulano",
     "data": "2025-07-04",
     "horario": "10:00",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244839677,
@@ -63,7 +68,8 @@
     "barbeiro": "Fulano",
     "data": "2025-07-04",
     "horario": "10:30",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244844941,
@@ -74,7 +80,8 @@
     "barbeiro": "Fulano",
     "data": "2025-07-04",
     "horario": "11:00",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244850420,
@@ -85,7 +92,8 @@
     "barbeiro": "Fulano",
     "data": "2025-07-04",
     "horario": "11:30",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244854665,
@@ -96,7 +104,8 @@
     "barbeiro": "Fulano",
     "data": "2025-07-04",
     "horario": "12:00",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244859891,
@@ -107,7 +116,8 @@
     "barbeiro": "Fulano",
     "data": "2025-07-04",
     "horario": "12:30",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244865724,
@@ -118,7 +128,8 @@
     "barbeiro": "Fulano",
     "data": "2025-07-04",
     "horario": "13:00",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244870454,
@@ -129,7 +140,8 @@
     "barbeiro": "Fulano",
     "data": "2025-07-04",
     "horario": "13:30",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244875034,
@@ -140,7 +152,8 @@
     "barbeiro": "Fulano",
     "data": "2025-07-04",
     "horario": "14:00",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244879936,
@@ -151,7 +164,8 @@
     "barbeiro": "Fulano",
     "data": "2025-07-04",
     "horario": "14:30",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244884867,
@@ -162,7 +176,8 @@
     "barbeiro": "Fulano",
     "data": "2025-07-04",
     "horario": "15:00",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244889359,
@@ -173,7 +188,8 @@
     "barbeiro": "Fulano",
     "data": "2025-07-04",
     "horario": "15:30",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244893821,
@@ -184,7 +200,8 @@
     "barbeiro": "Fulano",
     "data": "2025-07-04",
     "horario": "16:00",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244897944,
@@ -195,7 +212,8 @@
     "barbeiro": "Fulano",
     "data": "2025-07-04",
     "horario": "16:30",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244910380,
@@ -206,7 +224,8 @@
     "barbeiro": "Fulano",
     "data": "2025-07-04",
     "horario": "17:00",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244914790,
@@ -217,7 +236,8 @@
     "barbeiro": "Fulano",
     "data": "2025-07-04",
     "horario": "17:30",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747364527349,
@@ -228,7 +248,8 @@
     "barbeiro": "Fulano",
     "data": "2025-07-04",
     "horario": "18:00",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747337453195,
@@ -239,7 +260,8 @@
     "barbeiro": "Fulano",
     "data": "2025-05-15",
     "horario": "08:00",
-    "estado": "Efetuado e Pago"
+    "estado": "Efetuado e Pago",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244778964,
@@ -250,7 +272,8 @@
     "barbeiro": "Fulaninho",
     "data": "2025-07-04",
     "horario": "08:00",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244815979,
@@ -261,7 +284,8 @@
     "barbeiro": "Fulaninho",
     "data": "2025-07-04",
     "horario": "08:30",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244820441,
@@ -272,7 +296,8 @@
     "barbeiro": "Fulaninho",
     "data": "2025-07-04",
     "horario": "09:00",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244825140,
@@ -283,7 +308,8 @@
     "barbeiro": "Fulaninho",
     "data": "2025-07-04",
     "horario": "09:30",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244835331,
@@ -294,7 +320,8 @@
     "barbeiro": "Fulaninho",
     "data": "2025-07-04",
     "horario": "10:00",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244839677,
@@ -305,7 +332,8 @@
     "barbeiro": "Fulaninho",
     "data": "2025-07-04",
     "horario": "10:30",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244844941,
@@ -316,7 +344,8 @@
     "barbeiro": "Fulaninho",
     "data": "2025-07-04",
     "horario": "11:00",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244850420,
@@ -327,7 +356,8 @@
     "barbeiro": "Fulaninho",
     "data": "2025-07-04",
     "horario": "11:30",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244854665,
@@ -338,7 +368,8 @@
     "barbeiro": "Fulaninho",
     "data": "2025-07-04",
     "horario": "12:00",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244859891,
@@ -349,7 +380,8 @@
     "barbeiro": "Fulaninho",
     "data": "2025-07-04",
     "horario": "12:30",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244865724,
@@ -360,7 +392,8 @@
     "barbeiro": "Fulaninho",
     "data": "2025-07-04",
     "horario": "13:00",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244870454,
@@ -371,7 +404,8 @@
     "barbeiro": "Fulaninho",
     "data": "2025-07-04",
     "horario": "13:30",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244875034,
@@ -382,7 +416,8 @@
     "barbeiro": "Fulaninho",
     "data": "2025-07-04",
     "horario": "14:00",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244879936,
@@ -393,7 +428,8 @@
     "barbeiro": "Fulaninho",
     "data": "2025-07-04",
     "horario": "14:30",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244884867,
@@ -404,7 +440,8 @@
     "barbeiro": "Fulaninho",
     "data": "2025-07-04",
     "horario": "15:00",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244889359,
@@ -415,7 +452,8 @@
     "barbeiro": "Fulaninho",
     "data": "2025-07-04",
     "horario": "15:30",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244893821,
@@ -426,7 +464,8 @@
     "barbeiro": "Fulaninho",
     "data": "2025-07-04",
     "horario": "16:00",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244897944,
@@ -437,7 +476,8 @@
     "barbeiro": "Fulaninho",
     "data": "2025-07-04",
     "horario": "16:30",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244910380,
@@ -448,7 +488,8 @@
     "barbeiro": "Fulaninho",
     "data": "2025-07-04",
     "horario": "17:00",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747244914790,
@@ -459,7 +500,8 @@
     "barbeiro": "Fulaninho",
     "data": "2025-07-04",
     "horario": "17:30",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1747364527349,
@@ -470,7 +512,8 @@
     "barbeiro": "Fulaninho",
     "data": "2025-07-04",
     "horario": "18:00",
-    "estado": "Agendado"
+    "estado": "Agendado",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1749581603865,
@@ -481,7 +524,8 @@
     "barbeiro": "Fulano",
     "data": "2025-06-10",
     "horario": "11:00",
-    "estado": "Efetuado e Pago"
+    "estado": "Efetuado e Pago",
+    "canceladoCliente": false
   },
   {
     "idAgendamento": 1750631561090,
@@ -492,6 +536,31 @@
     "barbeiro": "Fulano",
     "data": "2025-06-22",
     "horario": "08:30",
-    "estado": "Cancelado"
+    "estado": "Efetuado e Pago",
+    "canceladoCliente": false
+  },
+  {
+    "idAgendamento": 1750706272744,
+    "idCliente": 4,
+    "nomeCliente": "Teste",
+    "servico": "Cabelo",
+    "preco": 30,
+    "barbeiro": "Fulano",
+    "data": "2025-06-24",
+    "horario": "11:30",
+    "estado": "Cancelado pelo cliente",
+    "canceladoCliente": true
+  },
+  {
+    "idAgendamento": 1750706317765,
+    "idCliente": 4,
+    "nomeCliente": "Teste",
+    "servico": "Cabelo",
+    "preco": 30,
+    "barbeiro": "Fulano",
+    "data": "2025-06-24",
+    "horario": "11:00",
+    "estado": "Cancelado",
+    "canceladoCliente": false
   }
 ]
