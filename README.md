@@ -58,9 +58,9 @@ Com um sistema simples e eficiente, profissionais poderão gerenciar serviços, 
 
 ## 📈 Status do Projeto
 
-> **Progresso atual**: 80% (Prototipado em ambiente local).
+> **Progresso atual**: 90% (Prototipado em ambiente local).
 
-> **Próximos passos**: Verificações de ações, tabela com histórico de agendamentos do usuário, edição de informações da conta.
+> **Próximos passos**: Alterar o armazenamento de agendamentos via json para um banco de dados sqlite.
 
 ---
 
