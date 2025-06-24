@@ -93,6 +93,57 @@ app.post("/register", (req, res) => {
   });
 });
 
+// ===== ROTAS DE USUÁRIOS =====
+
+// Buscar dados do usuário pelo ID
+app.get("/api/usuario/:id", (req, res) => {
+  const { id } = req.params;
+  db.get("SELECT id, nome, email, tipo, telefone FROM usuarios WHERE id = ?", [id], (err, row) => {
+    if (err) return res.status(500).json({ sucesso: false, mensagem: "Erro ao buscar usuário." });
+    if (!row) return res.status(404).json({ sucesso: false, mensagem: "Usuário não encontrado." });
+    res.json(row);
+  });
+});
+
+// Atualizar dados do usuário (nome, email, telefone)
+app.put("/api/usuario/:id", (req, res) => {
+  const { id } = req.params;
+  const { nome, email, telefone } = req.body;
+  db.run(
+    "UPDATE usuarios SET nome = ?, email = ?, telefone = ? WHERE id = ?",
+    [nome, email, telefone, id],
+    function (err) {
+      if (err) return res.status(500).json({ sucesso: false, mensagem: "Erro ao atualizar usuário." });
+      res.json({ sucesso: true, mensagem: "Dados atualizados com sucesso." });
+    }
+  );
+});
+
+// Alterar senha do usuário
+app.put("/api/usuario/:id/senha", async (req, res) => {
+  const { id } = req.params;
+  const { senhaAtual, novaSenha } = req.body;
+  db.get("SELECT senha FROM usuarios WHERE id = ?", [id], async (err, row) => {
+    if (err || !row) return res.status(400).json({ sucesso: false, mensagem: "Usuário não encontrado." });
+    const senhaCorreta = await bcrypt.compare(senhaAtual, row.senha);
+    if (!senhaCorreta) return res.status(400).json({ sucesso: false, mensagem: "Senha atual incorreta." });
+    const novaSenhaHash = await bcrypt.hash(novaSenha, SALT_ROUNDS);
+    db.run("UPDATE usuarios SET senha = ? WHERE id = ?", [novaSenhaHash, id], function (err) {
+      if (err) return res.status(500).json({ sucesso: false, mensagem: "Erro ao alterar senha." });
+      res.json({ sucesso: true, mensagem: "Senha alterada com sucesso." });
+    });
+  });
+});
+
+// Excluir conta do usuário
+app.delete("/api/usuario/:id", (req, res) => {
+  const { id } = req.params;
+  db.run("DELETE FROM usuarios WHERE id = ?", [id], function (err) {
+    if (err) return res.status(500).json({ sucesso: false, mensagem: "Erro ao excluir conta." });
+    res.json({ sucesso: true, mensagem: "Conta excluída com sucesso." });
+  });
+});
+
 // ===== ROTAS DE INFORMAÇÕES DA HOME =====
 
 const fs = require("fs");

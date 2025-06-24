@@ -25,10 +25,78 @@
         </div>
     </nav>
     <section class="info-container">
-        <div class="info-text" id="userInfo">
+        <div class="info-text" id="userInfo"></div>
+        <div class="conta-actions">
+            <button id="btnEditarConta" class="conta-btn">Editar dados da conta</button>
+            <button id="btnAlterarSenha" class="conta-btn">Alterar senha</button>
+            <button id="btnDeslogar" class="conta-btn">Deslogar</button>
+            <button id="btnExcluirConta" class="conta-btn excluir">Excluir conta</button>
         </div>
-        <button id="btnDeslogar">Deslogar</button>
     </section>
+
+    <!-- Modal Editar Dados -->
+    <div id="modal-editar" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-editar">&times;</span>
+            <h2>Editar Dados da Conta</h2>
+            <form id="formEditarConta">
+                <input type="text" id="editNome" placeholder="Nome" required>
+                <input type="email" id="editEmail" placeholder="E-mail" required>
+                <input type="text" id="editTelefone" placeholder="Telefone" required>
+                <button type="submit" id="btnSalvarEdicao" class="conta-btn" disabled>Salvar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Alterar Senha -->
+    <div id="modal-senha" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-senha">&times;</span>
+            <h2>Alterar Senha</h2>
+            <form id="formAlterarSenha">
+                <input type="password" id="senhaAtual" placeholder="Senha atual" required>
+                <input type="password" id="novaSenha" placeholder="Nova senha" required>
+                <input type="password" id="confirmaNovaSenha" placeholder="Confirme a nova senha" required>
+                <button type="submit" id="btnSalvarSenha" class="conta-btn" disabled>Salvar nova senha</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Confirmação de Alteração de Senha -->
+    <div id="modal-confirma-senha" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-confirma-senha">&times;</span>
+            <h2>Confirmar Alteração de Senha</h2>
+            <p>Tem certeza que deseja alterar sua senha?</p>
+            <button id="btnConfirmaAlterarSenha" class="conta-btn">Sim, alterar</button>
+            <button id="btnCancelaAlterarSenha" class="conta-btn excluir">Cancelar</button>
+        </div>
+    </div>
+
+    <!-- Modal Excluir Conta -->
+    <div id="modal-excluir" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-excluir">&times;</span>
+            <h2>Excluir Conta</h2>
+            <p>Tem certeza que deseja excluir sua conta? <br>
+                <span style="color:#FFD700;">Todos os seus dados serão apagados, mas seus agendamentos permanecerão
+                    registrados.</span>
+            </p>
+            <button id="btnConfirmaExcluir" class="conta-btn excluir">Sim, excluir</button>
+            <button id="btnCancelaExcluir" class="conta-btn">Cancelar</button>
+        </div>
+    </div>
+
+    <!-- Modal Deslogar -->
+    <div id="modal-deslogar" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-deslogar">&times;</span>
+            <h2>Deslogar</h2>
+            <p>Tem certeza que deseja sair da sua conta?</p>
+            <button id="btnConfirmaDeslogar" class="conta-btn">Sim, deslogar</button>
+            <button id="btnCancelaDeslogar" class="conta-btn">Cancelar</button>
+        </div>
+    </div>
 
     <script src="../../static/js/conta.js" defer></script>
     <script src="../../static/js/session.js" defer></script>
