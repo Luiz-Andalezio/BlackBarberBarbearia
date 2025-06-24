@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     const agora = new Date();
 
-    // Separe em programados e excedidos
     const programados = [];
     const excedidos = [];
 
@@ -101,7 +100,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         tbodyExcedidos.appendChild(tr);
     });
 
-    // Dropdown customizado (igual ao seu)
+    // Dropdown customizado
     document.querySelectorAll('.agenda-table').forEach(table => {
         table.addEventListener('click', async function (e) {
             const btn = e.target.closest('.status-btn');
