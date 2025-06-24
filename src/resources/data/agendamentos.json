@@ -6,7 +6,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "08:00",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -18,7 +18,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "08:30",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -30,7 +30,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "09:00",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -42,7 +42,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "09:30",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -54,7 +54,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "10:00",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -66,7 +66,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "10:30",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -78,7 +78,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "11:00",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -90,7 +90,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "11:30",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -102,7 +102,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "12:00",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -114,7 +114,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "12:30",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -126,7 +126,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "13:00",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -138,7 +138,7 @@
     "servico": "Barba",
     "preco": 20,
     "barbeiro": "Fulano",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "13:30",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -150,7 +150,7 @@
     "servico": "Sobrancelha",
     "preco": 10,
     "barbeiro": "Fulano",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "14:00",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -162,7 +162,7 @@
     "servico": "Sobrancelha",
     "preco": 10,
     "barbeiro": "Fulano",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "14:30",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -174,7 +174,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "15:00",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -186,7 +186,7 @@
     "servico": "Sobrancelha",
     "preco": 10,
     "barbeiro": "Fulano",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "15:30",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -198,7 +198,7 @@
     "servico": "Barba",
     "preco": 20,
     "barbeiro": "Fulano",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "16:00",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -210,7 +210,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "16:30",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -222,7 +222,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "17:00",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -234,7 +234,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "17:30",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -246,7 +246,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulano",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "18:00",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -270,7 +270,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "08:00",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -282,7 +282,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "08:30",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -294,7 +294,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "09:00",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -306,7 +306,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "09:30",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -318,7 +318,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "10:00",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -330,7 +330,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "10:30",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -342,7 +342,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "11:00",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -354,7 +354,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "11:30",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -366,7 +366,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "12:00",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -378,7 +378,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "12:30",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -390,7 +390,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "13:00",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -402,7 +402,7 @@
     "servico": "Barba",
     "preco": 20,
     "barbeiro": "Fulaninho",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "13:30",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -414,7 +414,7 @@
     "servico": "Sobrancelha",
     "preco": 10,
     "barbeiro": "Fulaninho",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "14:00",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -426,7 +426,7 @@
     "servico": "Sobrancelha",
     "preco": 10,
     "barbeiro": "Fulaninho",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "14:30",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -438,7 +438,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "15:00",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -450,7 +450,7 @@
     "servico": "Sobrancelha",
     "preco": 10,
     "barbeiro": "Fulaninho",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "15:30",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -462,7 +462,7 @@
     "servico": "Barba",
     "preco": 20,
     "barbeiro": "Fulaninho",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "16:00",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -474,7 +474,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "16:30",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -486,7 +486,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "17:00",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -498,7 +498,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "17:30",
     "estado": "Agendado",
     "canceladoCliente": false
@@ -510,7 +510,7 @@
     "servico": "Cabelo",
     "preco": 30,
     "barbeiro": "Fulaninho",
-    "data": "2025-07-04",
+    "data": "2025-06-25",
     "horario": "18:00",
     "estado": "Agendado",
     "canceladoCliente": false
