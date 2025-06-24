@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     id: data.id,
                     nome: data.nome,
                     email: data.email,
+                    telefone: data.telefone,
                     tipo: data.tipo
                 };
                 sessionStorage.setItem("usuarioLogado", JSON.stringify(usuario));
@@ -72,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <h2 id="signTypeText">Cadastro:</h2>
                 <input type="text" id="nome" placeholder="Digite seu nome..." required>
                 <input type="email" id="emailRegister" placeholder="Digite seu e-mail..." required>
-                <input type="text" id="telefone" placeholder="Digite seu telefone... (opcional)" required>
+                <input type="text" id="telefone" placeholder="Digite seu telefone..." required>
                 <input type="password" id="senhaRegister" placeholder="Digite sua senha..." required>
                 <input type="password" id="confirmarSenha" placeholder="Confirme sua senha..." required>
                 <button type="submit" id="btnRegister">Cadastrar</button>
@@ -100,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const res = await fetch("http://localhost:3000/register", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ nome, email, senha, tipo: "cliente", telefone })
+                body: JSON.stringify({ nome, email, senha, telefone, tipo: "cliente" })
             });
 
             const data = await res.json();
@@ -108,8 +109,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (data.sucesso) {
                 const usuario = {
+                    id: data.id,
                     nome,
                     email,
+                    telefone,
                     tipo: "cliente"
                 };
                 sessionStorage.setItem("usuarioLogado", JSON.stringify(usuario));
